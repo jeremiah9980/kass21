@@ -4,60 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kassidy Cargill | Elite Recruiting Profile</title>
-<link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="red_metal_theme.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="red_metal_theme.css" />
+  <link rel="stylesheet" href="hotshots_brand_kit.css" />
 </head>
 <body>
 
-<!-- HERO VIDEO -->
-<section style="position:relative; height:65vh; overflow:hidden;">
-  <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
-    <source src="highlight.mp4" type="video/mp4">
-  </video>
-  <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);"></div>
-  <div style="position:absolute; bottom:40px; left:40px; color:white;">
-    <h1 style="font-size:56px; margin:0;">Kassidy Cargill</h1>
-    <p style="font-size:20px;">Impact Athlete • Utility • Speed • Power</p>
-  </div>
-</section>
+  <section style="position:relative; height:65vh; overflow:hidden;">
+    <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
+      <source src="highlight.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);"></div>
+    <div style="position:absolute; bottom:40px; left:40px; color:white;">
+      <div class="impact-stamp">Impact Player</div>
+      <h1 style="font-size:56px; margin:12px 0 0;">#21 Kassidy Cargill</h1>
+      <p style="font-size:20px;">Utility • Speed • Power • Competitive Edge</p>
+    </div>
+  </section>
 
-<nav class="section-nav">
-  <a href="index.html">Home</a>
-  <a href="story.html">Story</a>
-  <a href="player-card.html">Player Card</a>
-</nav>
+  <nav class="section-nav">
+    <a href="index.html">Home</a>
+    <a href="story.html">Story</a>
+    <a href="player-card.html">Player Card</a>
+  </nav>
 
-<main>
+  <main>
+    <section class="panel">
+      <h2>Coach / Scout Evaluation</h2>
+      <p><strong>Overall:</strong> Dynamic utility athlete with strong contact profile and elite basepath pressure. Plays with edge and consistent engagement.</p>
+      <p><strong>Hit Tool:</strong> High-contact hitter with gap power and developing extra-base impact.</p>
+      <p><strong>Speed:</strong> Game-changing. 94.87% SB success with aggressive reads.</p>
+      <p><strong>Defense:</strong> Versatile defender with catcher toughness and strong instincts.</p>
+      <p><strong>Makeup:</strong> Competitive, resilient, coachable, responds quickly to feedback.</p>
+    </section>
 
-<section class="panel">
-  <h2>Coach / Scout Evaluation</h2>
-  <p><strong>Overall:</strong> Dynamic utility athlete with strong contact profile and elite basepath pressure. Plays with edge and consistent engagement.</p>
-  <p><strong>Hit Tool:</strong> High-contact hitter with gap power and developing extra-base impact.</p>
-  <p><strong>Speed:</strong> Game-changing. 94.87% SB success with aggressive reads.</p>
-  <p><strong>Defense:</strong> Versatile defender with catcher toughness and strong instincts.</p>
-  <p><strong>Makeup:</strong> Competitive, resilient, coachable, responds quickly to feedback.</p>
-</section>
+    <section class="panel">
+      <h2>Performance Metrics</h2>
+      <canvas id="chart"></canvas>
+    </section>
+  </main>
 
-<section class="panel">
-  <h2>Performance Metrics</h2>
-  <canvas id="chart"></canvas>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-const ctx = document.getElementById('chart');
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['AVG','OBP','OPS','SLG'],
-    datasets: [{
-      data: [0.449,0.520,1.224,0.704]
-    }]
-  }
-});
-</script>
-
-</main>
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('chart');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['AVG','OBP','OPS','SLG'],
+        datasets: [{
+          label: 'Career Metrics',
+          data: [0.449, 0.520, 1.224, 0.704]
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
