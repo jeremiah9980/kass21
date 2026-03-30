@@ -245,4 +245,20 @@ footer {
   .panel {
     padding: 22px;
   }
+  .tag-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.highlight-tag {
+  background: linear-gradient(180deg, #d22a38, #9d1621);
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.10);
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
