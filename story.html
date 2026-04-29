@@ -112,6 +112,7 @@
       gap: 0;
       overflow-x: auto;
     }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; overflow-x: auto; }
     nav a {
       display: inline-block;
       padding: 0.85rem 1.1rem;
@@ -129,11 +130,11 @@
     nav a:hover { color: var(--star-red); border-bottom-color: var(--star-red); }
 
     /* ── LAYOUT ── */
-    main { max-width: 900px; padding: 0 2rem 5rem; }
+    main { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; }
 
     /* ── SECTIONS ── */
     section {
-      padding: 3rem 0 2rem;
+      padding: 3.5rem 0 2.5rem;
       border-bottom: 1px solid var(--border);
     }
     section:last-child { border-bottom: none; }
@@ -570,9 +571,10 @@
 </head>
 <body>
 
-  <div class="brand-bar"><span>Kass21</span> &bull; Story &amp; Development</div>
+  <div class="brand-bar"><div class="brand-bar-inner"><span>Kass21</span> &bull; Story &amp; Development</div></div>
 
   <header class="hero">
+  <div class="hero-inner">
   <div style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(5rem,18vw,10rem);font-weight:700;line-height:1;color:rgba(255,255,255,0.05);position:absolute;right:1.5rem;bottom:-0.1em;pointer-events:none;user-select:none;" aria-hidden="true">21</div>
     <p class="hero-eyebrow">Georgetown, TX &nbsp;&bull;&nbsp; 8U &bull; 2023 &nbsp;&bull;&nbsp; Built Through Adversity</p>
     <h1>#21 Kassidy Cargill</h1>
@@ -583,9 +585,11 @@
       starting in boys baseball, surviving a broken team environment, and winning everything when
       given real coaching and real opportunity.
     </p>
-  </header>
+  </div>
+</header>
 
   <nav>
+  <div class="nav-inner">
     <a href="index.html">Home</a>
     <a href="recruiting_v2.html">Recruiting</a>
     <a href="story.html" aria-current="page" class="active">Story</a>
@@ -599,7 +603,8 @@
     <a href="#attributes">Attributes</a>
     <a href="#identity">Identity</a>
     <a href="#verdict">Verdict</a>
-  </nav>
+  </div>
+</nav>
 
   <main>
 
@@ -1240,9 +1245,9 @@
 
   </main>
 
-  <footer>
+  <footer><div class="footer-inner">
     <span>Kass21</span> &bull; #21 Kassidy Cargill
-  </footer>
+  </div></footer>
 
 </body>
 </html>

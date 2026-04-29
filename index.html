@@ -27,26 +27,30 @@
     html { font-size: 16px; scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: 'Barlow', sans-serif; font-weight: 400; line-height: 1.7; min-height: 100vh; }
 
-    .brand-bar { background: var(--blue); border-bottom: 1px solid rgba(255,255,255,0.12); padding: 0.55rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+    .brand-bar { background: var(--blue); border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .brand-bar-inner { max-width: 1100px; margin: 0 auto; padding: 0.55rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
     .brand-bar span { color: #fff; }
 
     .hero { background: var(--blue); border-bottom: 3px solid var(--red); padding: 3rem 2rem 2.5rem; position: relative; overflow: hidden; }
     .hero-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
     .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; line-height: 1; color: #fff; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
     .hero-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 0.9rem; }
-    .hero-desc { font-size: 0.95rem; color: rgba(255,255,255,0.68); max-width: 580px; line-height: 1.6; margin-bottom: 1.75rem; }
-    .hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 1.25rem; }
-    .hero-stat-val { font-family: 'Barlow Condensed', sans-serif; font-size: 1.75rem; font-weight: 700; color: #fff; line-height: 1; }
+    .hero-desc { font-size: 0.95rem; color: rgba(255,255,255,0.68); max-width: 680px; line-height: 1.6; margin-bottom: 1.75rem; }
+    .hero-stats { display: flex; gap: 0; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 1.5rem; margin-top: 0.5rem; }
+    .hero-stat-val { font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 700; color: #fff; line-height: 1; }
     .hero-stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 3px; }
+    .hero-stats > div { padding: 0 2rem 0 0; margin-right: 2rem; border-right: 1px solid rgba(255,255,255,0.12); }
+    .hero-stats > div:last-child { border-right: none; }
 
-    nav { background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; gap: 0; overflow-x: auto; }
+    nav { background: var(--bg); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; overflow-x: auto; }
     nav a { display: inline-block; padding: 0.85rem 1rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
     nav a:hover { color: var(--red); border-bottom-color: var(--red); }
     nav > span { display: inline-block; width: 1px; background: var(--border2); margin: 0.4rem 0.25rem; align-self: stretch; }
 
-    main { max-width: 900px; padding: 0 2rem 5rem; }
+    main { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; }
 
-    section { padding: 2.75rem 0 2rem; border-bottom: 1px solid var(--border); }
+    section { padding: 3.5rem 0 2.5rem; border-bottom: 1px solid var(--border); }
     section:last-child { border-bottom: none; }
 
     h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.45rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.4rem; padding-bottom: 0.55rem; border-bottom: 2px solid var(--red); }
@@ -58,7 +62,7 @@
     /* metric grid */
     .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin: 1.25rem 0; }
     .metric-cell { background: var(--surf); padding: 1rem 1rem; }
-    .metric-val { font-family: 'Barlow Condensed', sans-serif; font-size: 1.55rem; font-weight: 700; color: var(--blue); line-height: 1; }
+    .metric-val { font-family: 'Barlow Condensed', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--blue); line-height: 1; }
     .metric-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
 
     /* timeline phases */
@@ -220,7 +224,8 @@
       margin-bottom: 1px;
     }
 
-    footer { background: var(--blue); border-top: 3px solid var(--red); padding: 1.25rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+    footer { background: var(--blue); border-top: 3px solid var(--red); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; padding: 1.25rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
     footer span { color: #fff; }
     nav a.active, nav a[aria-current="page"] {
       color: var(--red);
@@ -230,9 +235,10 @@
 </head>
 <body>
 
-<div class="brand-bar"><span>Kass21</span> &bull; Athlete Profile</div>
+<div class="brand-bar"><div class="brand-bar-inner"><span>Kass21</span> &bull; Athlete Profile</div></div>
 
 <header class="hero">
+  <div class="hero-inner">
   <div style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(5rem,18vw,10rem);font-weight:700;line-height:1;color:rgba(255,255,255,0.06);position:absolute;right:1.5rem;bottom:-0.2em;pointer-events:none;user-select:none;" aria-hidden="true">21</div>
   <p class="hero-eyebrow">Hotshots Softball &nbsp;&bull;&nbsp; 2K15 Cortinas &nbsp;&bull;&nbsp; Georgetown, TX</p>
   <h1>#21 Kassidy Cargill</h1>
@@ -246,9 +252,11 @@
     <div><div class="hero-stat-val">74</div><div class="hero-stat-label">Career SB</div></div>
     <div><div class="hero-stat-val">94.87%</div><div class="hero-stat-label">SB Success</div></div>
   </div>
+</div>
 </header>
 
 <nav>
+  <div class="nav-inner">
     <a href="index.html" aria-current="page" class="active">Home</a>
     <a href="recruiting_v2.html">Recruiting</a>
     <a href="story.html">Story</a>
@@ -260,13 +268,12 @@
     <a href="#stats">Stats</a>
     <a href="#instagram">Instagram</a>
     <a href="#reel">Highlights</a>
-  </nav>
+  </div>
+</nav>
 
-<main>
-
-  <!-- ── TEAM USA ── -->
+<!-- ── TEAM USA ── -->
   <section id="teamusa" class="usa-section">
-    <div class="usa-header">
+    <div class="usa-header" style="max-width:1100px;margin:0 auto;padding-left:2rem;padding-right:2rem;">
       <span class="usa-eyebrow">Team USA &nbsp;&bull;&nbsp; 10U &nbsp;&bull;&nbsp; 2026</span>
     </div>
 
@@ -302,6 +309,7 @@
     </div>
   </section>
 
+<main>
   <section id="about">
     <h2>Player Profile</h2>
     <p>Kassidy Cargill is a rising softball athlete whose game is built on toughness, versatility, speed, and impact. What first looked like a natural catcher profile expanded into something even more dynamic: a multi-position player who can make her presence felt in the field, on the bases, and at the plate.</p>
@@ -491,7 +499,7 @@
 
 </main>
 
-<footer><span>Kass21</span> &bull; #21 Kassidy Cargill</footer>
+<footer><div class="footer-inner"><span>Kass21</span> &bull; #21 Kassidy Cargill</div></footer>
 
 </body>
 </html>

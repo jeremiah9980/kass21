@@ -27,7 +27,8 @@
     html { font-size: 16px; scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: 'Barlow', sans-serif; font-weight: 400; line-height: 1.7; min-height: 100vh; }
 
-    .brand-bar { background: var(--blue); border-bottom: 1px solid rgba(255,255,255,0.12); padding: 0.55rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+    .brand-bar { background: var(--blue); border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .brand-bar-inner { max-width: 1100px; margin: 0 auto; padding: 0.55rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
     .brand-bar span { color: #fff; }
 
     /* video strip */
@@ -36,18 +37,20 @@
     .video-strip-placeholder { width: 100%; height: 200px; background: var(--blue); display: flex; align-items: center; justify-content: center; }
     .video-strip-placeholder p { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
 
-    .hero { background: var(--blue); border-bottom: 3px solid var(--red); padding: 2.5rem 2rem 2rem; }
+    .hero { background: var(--blue); border-bottom: 3px solid var(--red); }
+    .hero-inner { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 2rem; position: relative; overflow: hidden; }
     .hero-badge { display: inline-block; background: var(--red); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; margin-bottom: 0.75rem; }
     .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.2rem, 5.5vw, 3.6rem); font-weight: 700; line-height: 1; color: #fff; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
     .hero-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
 
-    nav { background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; gap: 0; overflow-x: auto; }
+    nav { background: var(--bg); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; overflow-x: auto; }
     nav a { display: inline-block; padding: 0.85rem 1rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
     nav a:hover { color: var(--red); border-bottom-color: var(--red); }
     nav > span { display: inline-block; width: 1px; background: var(--border2); margin: 0.4rem 0.25rem; align-self: stretch; }
 
-    main { max-width: 900px; padding: 0 2rem 5rem; }
-    section { padding: 2.75rem 0 2rem; border-bottom: 1px solid var(--border); }
+    main { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; }
+    section { padding: 3.5rem 0 2.5rem; border-bottom: 1px solid var(--border); }
     section:last-child { border-bottom: none; }
 
     h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.45rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.4rem; padding-bottom: 0.55rem; border-bottom: 2px solid var(--red); }
@@ -80,7 +83,7 @@
     /* metric grid */
     .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin: 1.25rem 0; }
     .metric-cell { background: var(--surf); padding: 1rem; }
-    .metric-val { font-family: 'Barlow Condensed', sans-serif; font-size: 1.55rem; font-weight: 700; color: var(--blue); line-height: 1; }
+    .metric-val { font-family: 'Barlow Condensed', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--blue); line-height: 1; }
     .metric-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
 
     /* season table */
@@ -101,7 +104,8 @@
     .contact-val a { color: #ffb3bb; text-decoration: none; }
     .contact-val a:hover { text-decoration: underline; }
 
-    footer { background: var(--blue); border-top: 3px solid var(--red); padding: 1.25rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+    footer { background: var(--blue); border-top: 3px solid var(--red); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; padding: 1.25rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
     footer span { color: #fff; }
     nav a.active, nav a[aria-current="page"] {
       color: var(--red);
@@ -111,7 +115,7 @@
 </head>
 <body>
 
-<div class="brand-bar"><span>Kass21</span> &bull; Elite Recruiting Profile</div>
+<div class="brand-bar"><div class="brand-bar-inner"><span>Kass21</span> &bull; Elite Recruiting Profile</div></div>
 
 <div class="video-strip">
   <video src="highlight.mp4" autoplay muted loop playsinline
@@ -137,12 +141,15 @@
 </script>
 
 <header class="hero">
+  <div class="hero-inner">
   <div class="hero-badge">Impact Player</div>
   <h1>#21 Kassidy Cargill</h1>
   <p class="hero-sub">Utility &nbsp;&bull;&nbsp; Speed &nbsp;&bull;&nbsp; Power &nbsp;&bull;&nbsp; Competitive Edge</p>
+</div>
 </header>
 
 <nav>
+  <div class="nav-inner">
     <a href="index.html">Home</a>
     <a href="recruiting_v2.html" aria-current="page" class="active">Recruiting</a>
     <a href="story.html">Story</a>
@@ -152,7 +159,8 @@
     <a href="#tools">Tool Grades</a>
     <a href="#metrics">Stats</a>
     <a href="#contact">Contact</a>
-  </nav>
+  </div>
+</nav>
 
 <main>
 
@@ -264,7 +272,7 @@
 
 </main>
 
-<footer><span>Kass21</span> &bull; #21 Kassidy Cargill</footer>
+<footer><div class="footer-inner"><span>Kass21</span> &bull; #21 Kassidy Cargill</div></footer>
 
 </body>
 </html>
