@@ -110,6 +110,120 @@
     .ig-embed-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em; color: var(--dim); padding: 0 2px; }
     .ig-embed-tag { display: inline-block; background: var(--red-d); color: var(--red); border: 1px solid var(--red-b); font-weight: 700; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 1px 7px; border-radius: 2px; margin-right: 4px; }
 
+
+    /* ── TEAM USA FEATURE ── */
+    .usa-section {
+      padding: 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .usa-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 2.5rem 0 1.5rem;
+      flex-wrap: wrap;
+    }
+    .usa-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+    /* Hero portrait — full bleed feature card */
+    .usa-portrait-wrap {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--blue);
+      margin-bottom: 1px;
+    }
+    .usa-portrait-wrap img {
+      width: 100%;
+      display: block;
+      max-height: 620px;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .usa-portrait-badge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(10,26,70,0.95) 0%, rgba(10,26,70,0.6) 60%, transparent 100%);
+      padding: 3rem 1.5rem 1.25rem;
+    }
+    .usa-portrait-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.3rem;
+    }
+    .usa-portrait-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+    .usa-portrait-tag {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-bottom: 0.6rem;
+    }
+    /* Two supporting photos */
+    .usa-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+    }
+    @media (max-width: 500px) { .usa-duo { grid-template-columns: 1fr; } }
+    .usa-duo-cell {
+      position: relative;
+      background: var(--blue);
+      overflow: hidden;
+    }
+    .usa-duo-cell img {
+      width: 100%;
+      display: block;
+      height: 340px;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.4s ease;
+    }
+    .usa-duo-cell:hover img { transform: scale(1.03); }
+    .usa-duo-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(10,26,70,0.9) 0%, transparent 100%);
+      padding: 1.5rem 1rem 0.75rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+    .usa-duo-caption strong {
+      display: block;
+      font-size: 0.88rem;
+      color: #fff;
+      margin-bottom: 1px;
+    }
+
     footer { background: var(--blue); border-top: 3px solid var(--red); padding: 1.25rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
     footer span { color: #fff; }
     nav a.active, nav a[aria-current="page"] {
@@ -144,6 +258,7 @@
     <a href="story.html">Story</a>
     <a href="player-card.html">Player Card</a>
     <span style="display:inline-block;width:1px;background:var(--border2);margin:0.4rem 0.3rem;align-self:stretch;"></span>
+    <a href="#teamusa">Team USA</a>
     <a href="#about">About</a>
     <a href="#timeline">Timeline</a>
     <a href="#stats">Stats</a>
@@ -152,6 +267,44 @@
   </nav>
 
 <main>
+
+  <!-- ── TEAM USA ── -->
+  <section id="teamusa" class="usa-section">
+    <div class="usa-header">
+      <span class="usa-eyebrow">Team USA &nbsp;&bull;&nbsp; 10U &nbsp;&bull;&nbsp; 2026</span>
+    </div>
+
+    <!-- Feature portrait -->
+    <div class="usa-portrait-wrap">
+      <img
+        src="usa-official-portrait-2026.jpeg"
+        alt="Kassidy Cargill — Team USA official portrait, #21, 10U, 2026. Standing at home plate with American flag backdrop."
+      />
+      <div class="usa-portrait-badge">
+        <div class="usa-portrait-tag">Made in USA</div>
+        <div class="usa-portrait-title">#21 Kassidy Cargill</div>
+        <div class="usa-portrait-sub">Team USA &nbsp;&bull;&nbsp; 10U &nbsp;&bull;&nbsp; 2026</div>
+      </div>
+    </div>
+
+    <!-- Duo row -->
+    <div class="usa-duo">
+      <div class="usa-duo-cell">
+        <img
+          src="usa-night-ghost-bat.jpeg"
+          alt="Kassidy Cargill — night game photo in navy USA jersey with star-and-stripe sleeves, Ghost bat over shoulders at home plate."
+        />
+        <div class="usa-duo-caption"><strong>Ghost Bat</strong>Night Game Ready</div>
+      </div>
+      <div class="usa-duo-cell">
+        <img
+          src="usa-action-celebration.png"
+          alt="Kassidy Cargill — action celebration shot in USA uniform, mud-covered, exuberant, holding green bats."
+        />
+        <div class="usa-duo-caption"><strong>All Out</strong>That's the attitude</div>
+      </div>
+    </div>
+  </section>
 
   <section id="about">
     <h2>Player Profile</h2>
