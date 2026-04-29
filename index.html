@@ -109,7 +109,9 @@
     .reel-text { font-size: 0.92rem; color: var(--dim); line-height: 1.6; }
 
     /* ── INSTAGRAM EMBEDS ── */
-    .ig-embed-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; align-items: start; }
+    .ig-embed-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; align-items: start; }
+    @media (max-width: 800px) { .ig-embed-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .ig-embed-grid { grid-template-columns: 1fr; } }
     .ig-embed-wrap { display: flex; flex-direction: column; gap: 0.5rem; }
     .ig-embed-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em; color: var(--dim); padding: 0 2px; }
     .ig-embed-tag { display: inline-block; background: var(--red-d); color: var(--red); border: 1px solid var(--red-b); font-weight: 700; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 1px 7px; border-radius: 2px; margin-right: 4px; }
@@ -145,8 +147,12 @@
     }
     .usa-portrait-wrap img {
       width: 100%;
+      max-width: 100%;
+      max-height: 380px;
+      object-fit: contain;
+      object-position: top center;
       display: block;
-      height: auto;
+      margin: 0 auto;
     }
     .usa-portrait-badge {
       position: absolute;
@@ -200,9 +206,11 @@
     }
     .usa-duo-cell img {
       width: 100%;
+      max-height: 320px;
+      object-fit: contain;
+      object-position: top center;
       display: block;
-      height: auto;
-      transition: transform 0.4s ease;
+      background: var(--surf);
     }
 
     .usa-duo-caption {
@@ -425,45 +433,89 @@
     </div>
   </section>
 
-    <section id="instagram">
+      <section id="instagram">
     <h2>Instagram Highlights</h2>
-    <p style="margin-bottom:1.5rem;">Featured reels from <a href="https://instagram.com/kasscargill" style="color:var(--red);text-decoration:none;font-weight:500;" target="_blank">@kasscargill</a>.</p>
+    <p style="margin-bottom:1.75rem;">
+      Featured reels from
+      <a href="https://instagram.com/kasscargill" style="color:var(--red);text-decoration:none;font-weight:600;" target="_blank">@kasscargill</a>.
+    </p>
 
     <div class="ig-embed-grid">
-
       <div class="ig-embed-wrap">
-        <div class="ig-embed-label"><span class="ig-embed-tag">Speed</span> Basepath pressure &amp; stolen-base instincts</div>
-        <blockquote class="instagram-media"
+        <blockquote
+          class="instagram-media"
           data-instgrm-captioned
-          data-instgrm-permalink="https://www.instagram.com/reel/DOzhUEeAPxw/?utm_source=ig_embed"
+          data-instgrm-permalink="https://www.instagram.com/reel/DWxhXl1AE2f/?utm_source=ig_embed&amp;utm_campaign=loading"
           data-instgrm-version="14"
-          style="background:#fff;border:0;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.12);margin:0;min-width:0;padding:0;width:100%;">
-          <div style="padding:1rem;text-align:center;"><a href="https://www.instagram.com/reel/DOzhUEeAPxw/" target="_blank" style="color:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;">View Speed Reel &rarr;</a></div>
+          style="background:#FFF;border:0;border-radius:4px;box-shadow:0 0 1px 0 rgba(0,0,0,0.4),0 1px 10px 0 rgba(0,0,0,0.12);margin:0;padding:0;width:100%;">
+          <div style="padding:16px;text-align:center;">
+            <a href="https://www.instagram.com/reel/DWxhXl1AE2f/" target="_blank" style="color:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;">
+              <span style="display:inline-block;background:var(--red-d);border:1px solid var(--red-b);padding:2px 8px;border-radius:2px;margin-bottom:6px;">Highlight</span><br/>
+              View on Instagram &rarr;
+            </a>
+          </div>
         </blockquote>
       </div>
-
       <div class="ig-embed-wrap">
-        <div class="ig-embed-label"><span class="ig-embed-tag">Power</span> Extra-base impact &amp; developing loft</div>
-        <blockquote class="instagram-media"
+        <blockquote
+          class="instagram-media"
           data-instgrm-captioned
-          data-instgrm-permalink="https://www.instagram.com/reel/DWRMNXgANr9/?utm_source=ig_embed"
+          data-instgrm-permalink="https://www.instagram.com/reel/DXaATRvEfz7/?utm_source=ig_embed&amp;utm_campaign=loading"
           data-instgrm-version="14"
-          style="background:#fff;border:0;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.12);margin:0;min-width:0;padding:0;width:100%;">
-          <div style="padding:1rem;text-align:center;"><a href="https://www.instagram.com/reel/DWRMNXgANr9/" target="_blank" style="color:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;">View Power Reel &rarr;</a></div>
+          style="background:#FFF;border:0;border-radius:4px;box-shadow:0 0 1px 0 rgba(0,0,0,0.4),0 1px 10px 0 rgba(0,0,0,0.12);margin:0;padding:0;width:100%;">
+          <div style="padding:16px;text-align:center;">
+            <a href="https://www.instagram.com/reel/DXaATRvEfz7/" target="_blank" style="color:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;">
+              <span style="display:inline-block;background:var(--red-d);border:1px solid var(--red-b);padding:2px 8px;border-radius:2px;margin-bottom:6px;">Highlight</span><br/>
+              View on Instagram &rarr;
+            </a>
+          </div>
         </blockquote>
       </div>
-
       <div class="ig-embed-wrap">
-        <div class="ig-embed-label"><span class="ig-embed-tag">Defense</span> Utility range &amp; catcher toughness</div>
-        <blockquote class="instagram-media"
+        <blockquote
+          class="instagram-media"
           data-instgrm-captioned
-          data-instgrm-permalink="https://www.instagram.com/reel/DVEUSjmAOhD/?utm_source=ig_embed"
+          data-instgrm-permalink="https://www.instagram.com/reel/DWnRpPZAHj0/?utm_source=ig_embed&amp;utm_campaign=loading"
           data-instgrm-version="14"
-          style="background:#fff;border:0;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.12);margin:0;min-width:0;padding:0;width:100%;">
-          <div style="padding:1rem;text-align:center;"><a href="https://www.instagram.com/reel/DVEUSjmAOhD/" target="_blank" style="color:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;">View Defense Reel &rarr;</a></div>
+          style="background:#FFF;border:0;border-radius:4px;box-shadow:0 0 1px 0 rgba(0,0,0,0.4),0 1px 10px 0 rgba(0,0,0,0.12);margin:0;padding:0;width:100%;">
+          <div style="padding:16px;text-align:center;">
+            <a href="https://www.instagram.com/reel/DWnRpPZAHj0/" target="_blank" style="color:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;">
+              <span style="display:inline-block;background:var(--red-d);border:1px solid var(--red-b);padding:2px 8px;border-radius:2px;margin-bottom:6px;">Highlight</span><br/>
+              View on Instagram &rarr;
+            </a>
+          </div>
         </blockquote>
       </div>
-
+      <div class="ig-embed-wrap">
+        <blockquote
+          class="instagram-media"
+          data-instgrm-captioned
+          data-instgrm-permalink="https://www.instagram.com/reel/DV9rFiwAPoj/?utm_source=ig_embed&amp;utm_campaign=loading"
+          data-instgrm-version="14"
+          style="background:#FFF;border:0;border-radius:4px;box-shadow:0 0 1px 0 rgba(0,0,0,0.4),0 1px 10px 0 rgba(0,0,0,0.12);margin:0;padding:0;width:100%;">
+          <div style="padding:16px;text-align:center;">
+            <a href="https://www.instagram.com/reel/DV9rFiwAPoj/" target="_blank" style="color:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;">
+              <span style="display:inline-block;background:var(--red-d);border:1px solid var(--red-b);padding:2px 8px;border-radius:2px;margin-bottom:6px;">Speed</span><br/>
+              View on Instagram &rarr;
+            </a>
+          </div>
+        </blockquote>
+      </div>
+      <div class="ig-embed-wrap">
+        <blockquote
+          class="instagram-media"
+          data-instgrm-captioned
+          data-instgrm-permalink="https://www.instagram.com/reel/DVEUSjmAOhD/?utm_source=ig_embed&amp;utm_campaign=loading"
+          data-instgrm-version="14"
+          style="background:#FFF;border:0;border-radius:4px;box-shadow:0 0 1px 0 rgba(0,0,0,0.4),0 1px 10px 0 rgba(0,0,0,0.12);margin:0;padding:0;width:100%;">
+          <div style="padding:16px;text-align:center;">
+            <a href="https://www.instagram.com/reel/DVEUSjmAOhD/" target="_blank" style="color:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;">
+              <span style="display:inline-block;background:var(--red-d);border:1px solid var(--red-b);padding:2px 8px;border-radius:2px;margin-bottom:6px;">Defense</span><br/>
+              View on Instagram &rarr;
+            </a>
+          </div>
+        </blockquote>
+      </div>
     </div>
     <script async src="//www.instagram.com/embed.js"></script>
   </section>
@@ -503,3 +555,4 @@
 
 </body>
 </html>
+
