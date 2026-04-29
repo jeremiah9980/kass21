@@ -500,6 +500,32 @@
       color: rgba(255,255,255,0.5);
     }
     footer span { color: #ffffff; }
+    /* ── ACTION PHOTO ── */
+    .photo-wrap {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .photo-full {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .photo-caption {
+      background: var(--blue);
+      padding: 0.65rem 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .photo-caption-label {
+      color: var(--red);
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
   </style>
 </head>
 <body>
@@ -523,6 +549,7 @@
     <a href="recruiting_v2.html">Recruiting</a>
     <a href="player-card.html">Player Card</a>
     <a href="#timeline">Timeline</a>
+    <a href="#photos">Photos</a>
     <a href="#attributes">Attributes</a>
     <a href="#identity">Identity</a>
     <a href="#traits">Traits</a>
@@ -806,6 +833,26 @@
           Coach's words after the triple: "If you want to know what it's like to win the opening tournament,
           regular season, AND the end of season tournament — look right here. This is what it looks like."
         </p>
+      </div>
+    </section>
+
+    <!-- ── ACTION PHOTOS ── -->
+    <section id="photos">
+      <h2>Arsenal Action — 2023 Season</h2>
+      <p style="margin-bottom:1.25rem;">
+        Romo's Arsenal, Georgetown TX. Kassidy wearing #2 — fielding grounders, catching pop flies,
+        batting, running the bases, and playing defense across multiple positions. The triple-championship season documented in action.
+      </p>
+      <div class="photo-wrap">
+        <img
+          src="kassidy-arsenal-2023.png"
+          alt="Kassidy Cargill — Arsenal action shots 2023 season, Georgetown TX. Multiple panels showing fielding, batting, baserunning, and defensive play."
+          class="photo-full"
+        />
+        <div class="photo-caption">
+          <span class="photo-caption-label">2023 Season</span>
+          Romo's Arsenal &nbsp;&bull;&nbsp; Georgetown Youth Baseball &nbsp;&bull;&nbsp; Triple Champions &nbsp;&bull;&nbsp; Georgetown, TX
+        </div>
       </div>
     </section>
 
