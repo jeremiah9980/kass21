@@ -3,83 +3,946 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kassidy Cargill | Story & Development</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="red_metal_theme.css" />
-  <link rel="stylesheet" href="hotshots_brand_kit.css" />
+  <title>Kassidy Cargill | Story &amp; Development</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #ffffff;
+      --surf:     #f4f6fa;
+      --surf2:    #eaecf4;
+      --border:   #d5dae8;
+      --border2:  #b8c2d8;
+      --text:     #0f1f3d;
+      --muted:    #6070a0;
+      --dim:      #2d4070;
+      --red:      #cc2233;
+      --red-d:    rgba(204,34,51,0.08);
+      --red-b:    rgba(204,34,51,0.20);
+      --blue:     #1a3a7a;
+      --blue-d:   rgba(26,58,122,0.07);
+      --blue-b:   rgba(26,58,122,0.18);
+      --star-red: #cc2233;
+      --star-blue:#1a3a7a;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── BRAND BAR ── */
+    .brand-bar {
+      background: var(--blue);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      padding: 0.55rem 2rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .brand-bar span { color: #ffffff; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--blue);
+      border-bottom: 3px solid var(--red);
+      padding: 3.5rem 2rem 2.5rem;
+      max-width: 100%;
+    }
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.6rem;
+    }
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+    .hero-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 1rem;
+    }
+    .hero-desc {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+    nav a {
+      display: inline-block;
+      padding: 0.85rem 1.1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    nav a:hover { color: var(--star-red); border-bottom-color: var(--star-red); }
+
+    /* ── LAYOUT ── */
+    main { max-width: 900px; padding: 0 2rem 5rem; }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    section:last-child { border-bottom: none; }
+
+    h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--red);
+    }
+
+    h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin: 2rem 0 0.75rem;
+    }
+    h3:first-of-type { margin-top: 0; }
+
+    p { font-size: 0.95rem; color: var(--dim); line-height: 1.7; margin-bottom: 0.85rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── LABELS / OVERLINES ── */
+    .overline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    /* ── CALLOUT QUOTE ── */
+    .callout-quote {
+      border-left: 3px solid var(--red);
+      background: var(--red-d);
+      padding: 0.85rem 1.1rem;
+      border-radius: 0 4px 4px 0;
+      margin: 1.25rem 0;
+    }
+    .callout-quote p {
+      font-family: 'Barlow', sans-serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #8b1a24;
+      margin-bottom: 0.3rem;
+    }
+    .callout-quote cite {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-style: normal;
+      letter-spacing: 0.04em;
+    }
+
+    .callout-accent {
+      border-left: 3px solid var(--blue);
+      background: var(--blue-d);
+      padding: 0.85rem 1.1rem;
+      border-radius: 0 4px 4px 0;
+      margin: 1.25rem 0;
+    }
+    .callout-accent p {
+      font-size: 0.9rem;
+      color: var(--blue);
+      font-style: italic;
+      margin-bottom: 0.3rem;
+    }
+    .callout-accent cite {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    /* ── TIMELINE PHASE CARDS ── */
+    .phase {
+      background: var(--surf);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .phase-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .phase-date {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .phase-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    .phase-name.adversity  { color: var(--red); }
+    .phase-name.transition { color: var(--blue); }
+    .phase-name.breakout   { color: var(--blue); }
+    .phase-name.champion   { color: var(--red); }
+    .phase-name.foundation { color: var(--muted); }
+    .phase p { font-size: 0.9rem; }
+
+    /* ── GAME LOG TABLE ── */
+    .game-log {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin: 1rem 0;
+    }
+    .game-log th {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--border2);
+      font-weight: 500;
+      background: var(--surf2);
+    }
+    .game-log td {
+      padding: 0.5rem 0.75rem;
+      color: var(--dim);
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .game-log tr:last-child td { border-bottom: none; }
+    .game-log td.g-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .tag-red {
+      display: inline-block;
+      background: var(--red-d);
+      color: var(--red);
+      border: 1px solid var(--red-b);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 2px;
+    }
+    .tag-green {
+      display: inline-block;
+      background: var(--blue-d);
+      color: var(--blue);
+      border: 1px solid var(--blue-b);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 2px;
+    }
+    .tag-gold {
+      display: inline-block;
+      background: rgba(204,34,51,0.06);
+      color: var(--red);
+      border: 1px solid var(--red-b);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 2px;
+    }
+
+    /* ── SCOUTING BARS ── */
+    .attr-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .attr-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--dim);
+      width: 160px;
+      flex-shrink: 0;
+    }
+    .attr-track {
+      flex: 1;
+      height: 3px;
+      background: var(--border2);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .attr-fill {
+      height: 3px;
+      border-radius: 2px;
+      background: var(--blue);
+    }
+    .attr-fill.developing { background: var(--red); opacity: 0.7; }
+    .attr-score {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      width: 28px;
+      text-align: right;
+    }
+
+    /* ── POSITION CHIPS ── */
+    .chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+    .chip {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border: 1px solid var(--border2);
+      border-radius: 2px;
+      color: var(--muted);
+      background: var(--surf);
+    }
+
+    /* ── TIMELINE DOTS ── */
+    .tl { display: flex; flex-direction: column; gap: 0.65rem; margin: 0.75rem 0; }
+    .tl-row { display: flex; gap: 0.85rem; align-items: flex-start; }
+    .tl-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .tl-dot.red   { background: var(--red); }
+    .tl-dot.gold  { background: var(--red); }
+    .tl-dot.green { background: var(--blue); }
+    .tl-dot.dim   { background: var(--border2); }
+    .tl-text { font-size: 0.875rem; color: var(--dim); line-height: 1.55; }
+    .tl-text strong { color: var(--text); font-weight: 500; }
+
+    /* ── IDENTITY EVOLUTION ── */
+    .identity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .identity-cell {
+      background: var(--surf);
+      padding: 1rem 1.1rem;
+    }
+    .identity-cell-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+    .identity-cell-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--blue);
+      line-height: 1.2;
+    }
+
+    /* ── CHAMPION BANNERS ── */
+    .champion-banner {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.75rem 1rem;
+      background: var(--red-d);
+      border: 1px solid var(--red-b);
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+    .champion-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1;
+      width: 24px;
+      flex-shrink: 0;
+    }
+    .champion-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    /* ── VERDICT BOX ── */
+    .verdict {
+      background: var(--blue);
+      border: 1px solid var(--blue);
+      border-radius: 4px;
+      padding: 1.5rem 1.5rem;
+    }
+    .verdict p { font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.82); }
+
+    /* ── STAT ROW (info callouts) ── */
+    .info-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 1.25rem 0;
+    }
+    .info-cell {
+      background: var(--surf);
+      padding: 0.85rem 1rem;
+    }
+    .info-cell-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+    .info-cell-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--blue);
+      line-height: 1.2;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--blue);
+      border-top: 3px solid var(--red);
+      padding: 1.25rem 2rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    footer span { color: #ffffff; }
+  </style>
 </head>
 <body>
+
+  <div class="brand-bar"><span>Kass21</span> &bull; Story &amp; Development</div>
+
   <header class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">Kass21 • Story & Development</div>
-      <h1>#21 Kassidy Cargill</h1>
-      <div class="impact-stamp">Built Through Adversity</div>
-      <p class="lead">Adversity, transition, growth, and competitive rise. Kassidy’s story is not just about stats. It is about how she responded early, adapted fast, and kept growing into an impact player.</p>
-    </div>
+    <p class="hero-eyebrow">Georgetown, TX &nbsp;&bull;&nbsp; 8U &bull; 2023 &nbsp;&bull;&nbsp; Built Through Adversity</p>
+    <h1>#21 Kassidy Cargill</h1>
+    <p class="hero-sub">Built Through Adversity</p>
+    <p class="hero-desc">
+      Adversity, transition, growth, and competitive rise. Kassidy's story is not just about stats.
+      It is about how she responded early, adapted fast, and kept growing into an impact player —
+      starting in boys baseball, surviving a broken team environment, and winning everything when
+      given real coaching and real opportunity.
+    </p>
   </header>
 
-  <nav class="section-nav">
+  <nav>
     <a href="index.html">Home</a>
     <a href="recruiting_v2.html">Recruiting</a>
     <a href="player-card.html">Player Card</a>
     <a href="#timeline">Timeline</a>
+    <a href="#attributes">Attributes</a>
+    <a href="#identity">Identity</a>
     <a href="#traits">Traits</a>
+    <a href="#verdict">Verdict</a>
   </nav>
 
   <main>
-    <section class="panel">
+
+    <!-- ── WHY HER STORY MATTERS ── -->
+    <section id="why">
       <h2>Why Her Story Matters</h2>
-      <p>Kassidy’s development arc stands out because it was shaped early by challenge. Her path was not a straight line. It included team adversity, a transition into a different environment, rapid growth through new reps and coaching, and then visible success. That sequence helped build more than skills. It helped shape toughness, adaptability, and confidence.</p>
+      <p>
+        Kassidy's development arc stands out because it was shaped by real challenge, real injustice, and a real response.
+        Her path was not a straight line. It included two years of building her game in a boys baseball league, a transfer
+        into girls softball that exposed her to preferential coaching and systemic sidlining, a formal complaint to the
+        league board, and a mid-season transition into a more competitive environment — where she immediately began
+        producing and contributing to a championship season.
+      </p>
+      <p>
+        That sequence helped build more than skills. It built toughness, adaptability, self-assurance,
+        and the kind of composure that shows up when it counts. She did not quit under pressure.
+        She produced when given the opportunity to play.
+      </p>
     </section>
 
-    <section id="timeline" class="panel">
+    <!-- ── ORIGIN STORY ── -->
+    <section id="origin">
+      <h2>Origin Story — Before 2023</h2>
+
+      <h3>NAO League &bull; Boys Baseball &bull; 6U &bull; 2 Seasons</h3>
+      <p>
+        Before Kassidy ever set foot on a girls softball diamond, she spent two full seasons
+        playing boys baseball at NAO — and excelling at it. She handled the most ball-intensive
+        defensive positions in youth ball: pitcher, second base, and first base.
+        Her father Jeremiah coached the team for both seasons.
+      </p>
+      <p>
+        She was a major contributor to a mostly-boys team, trusted with the ball at pitcher
+        and in the infield because she'd earned it through her skills. That foundation — catcher
+        toughness, position versatility, and a competitive spirit — is what she carried into 2023.
+      </p>
+
+      <div class="info-row">
+        <div class="info-cell">
+          <div class="info-cell-label">League</div>
+          <div class="info-cell-val">NAO Baseball</div>
+        </div>
+        <div class="info-cell">
+          <div class="info-cell-label">Division</div>
+          <div class="info-cell-val">6U Boys</div>
+        </div>
+        <div class="info-cell">
+          <div class="info-cell-label">Seasons</div>
+          <div class="info-cell-val">2</div>
+        </div>
+        <div class="info-cell">
+          <div class="info-cell-label">Positions played</div>
+          <div class="info-cell-val">P, 2B, 1B</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 2023 DEVELOPMENT TIMELINE ── -->
+    <section id="timeline">
       <h2>2023 Development Timeline</h2>
-      <div class="timeline">
-        <article>
-          <h3>January – February 2023 • Foundation & Early Season</h3>
-          <p>Kassidy began her season in GYGSA during the Macaws phase. She was building foundational reps across positions and getting early exposure to competitive team dynamics. This was the beginning of her catcher and utility identity, along with early signs of versatility, toughness, and leadership.</p>
-        </article>
-        <article>
-          <h3>February 2023 • Adversity Phase</h3>
-          <p>During the season, Kassidy experienced a difficult team environment that included coaching issues and team-dynamic challenges. That stretch reduced development alignment and role clarity, and her family ultimately chose to advocate and make a transition. Instead of stalling her growth, that period helped build mental toughness, strengthen confidence, and teach her how to handle adversity early.</p>
-        </article>
-        <article>
-          <h3>March 2023 • Transition Phase</h3>
-          <p>Kassidy moved into baseball with Romo’s Arsenal, entering a more competitive and more structured environment. The coaching intensity, game pace, and overall structure immediately raised the level of her reps and accelerated growth in engagement, awareness, and confidence.</p>
-        </article>
-        <article>
-          <h3>April 2023 • Breakout Performance Phase</h3>
-          <p>As the spring developed, Kassidy emerged as a multi-position impact player. She contributed on the mound, made plays at third base, produced consistently at the plate, and showed aggressive base running. Her improvement became visible game to game, driven by coachability, fast correction response, and growing situational awareness.</p>
-        </article>
-        <article>
-          <h3>Late April 2023 • Identity Takes Shape</h3>
-          <p>This was the point where her aggressive style of play began to define her. She was increasingly recognized as a high-effort, high-impact player who went hard on the diamond and played with edge, energy, and presence.</p>
-        </article>
-        <article>
-          <h3>May 2023 • Championship Phase</h3>
-          <p>By May, the growth translated into team success. Kassidy contributed to a team that finished #1 in league standings and won the end-of-season tournament, including wins over top-ranked opponents. This phase reinforced that she could contribute to winning, perform under pressure, and continue developing leadership traits.</p>
-        </article>
+
+      <!-- Phase 1 -->
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-date">January – February 2023</span>
+          <span class="phase-name foundation">&bull; Foundation Phase</span>
+        </div>
+        <p>
+          Kassidy joined GYGSA's 8U Macaws — her first year in girls softball — alongside her step-brothers
+          (twin boys who joined GYBA's Arsenal at the same time). The family's intention: continue building
+          her skills in a new environment while introducing her to softball.
+        </p>
+        <p>
+          Before the first game, Coach Reese Bruechner distributed position assignment sheets to each player.
+          Kassidy's assignment: <strong>Starting Pitcher · 1st Base (backup) · Outfield.</strong>
+          You don't assign a player to pitcher or first base unless you trust them with the ball.
+          The family joined with that expectation.
+        </p>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-date">February – March 2023</span>
+          <span class="phase-name adversity">&bull; Adversity Phase</span>
+        </div>
+        <p>
+          After Game 1 at pitcher, Kassidy was moved to an outfield/bench rotation and stayed there.
+          The coach had reversed his own position assignment, placing Kassidy — along with 6 of the other
+          12 girls — into a rotating non-role. The same five or six players (all coaches' children)
+          occupied every infield position, every inning, every game.
+        </p>
+
+        <div class="callout-quote">
+          <p>"She's not coachable."</p>
+          <cite>— Coach Reese Bruechner, to Kassidy's father &nbsp;&bull;&nbsp; formally rebutted with documented evidence</cite>
+        </div>
+
+        <p class="overline" style="margin-top:1rem;">Game-by-game usage — documented</p>
+        <table class="game-log">
+          <thead>
+            <tr>
+              <th>Game</th>
+              <th>Role</th>
+              <th>At-bats</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="g-num">1</td>
+              <td>Starting pitcher</td>
+              <td>Full</td>
+              <td><span class="tag-green">As assigned</span></td>
+            </tr>
+            <tr>
+              <td class="g-num">2–3</td>
+              <td>Outfield / bench rotation</td>
+              <td>Limited</td>
+              <td><span class="tag-red">Reversed</span></td>
+            </tr>
+            <tr>
+              <td class="g-num">4–5</td>
+              <td>Outfield / bench rotation</td>
+              <td>1 at-bat per game</td>
+              <td><span class="tag-red">Minimal</span></td>
+            </tr>
+            <tr>
+              <td class="g-num">6</td>
+              <td>Outfield rotation</td>
+              <td>2 at-bats</td>
+              <td><span class="tag-red">Minimal</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.82rem; color:var(--muted);">
+          Team record through this stretch: 0–6. Infield players made many mistakes each game
+          yet maintained their positions. Coach was suspended after Game 1 for a sportsmanship
+          incident and acknowledged it on team chat.
+        </p>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-date">March – April 2023</span>
+          <span class="phase-name adversity">&bull; Clutch Moment &amp; Transition</span>
+        </div>
+        <p>
+          During Games 7–8, Kassidy made two standout plays that earned her a lasting nickname.
+          While playing left field — with GYGSA league president Tim present to evaluate a formal
+          complaint — she tracked down and tagged out base runners twice from left field.
+          Her father's nickname after: <strong>Clutch Cargill.</strong>
+        </p>
+        <p>
+          Despite this, the pattern continued. A formal written complaint was submitted to the GYGSA board
+          documenting the inequitable treatment of 7 of 13 players. The board president addressed it directly,
+          confirmed he witnessed the game, and indicated coaches would be reviewed before the next season vote.
+        </p>
+        <p>
+          Game 10 — the final Macaws game — Kassidy started as the <strong>only player on the bench</strong>
+          and batted last. This followed an exchange in which the coach had warned that missing
+          practices would mean reduced role — a retaliatory power move, as Kassidy had actually been
+          getting more reps by playing in both leagues simultaneously.
+        </p>
+
+        <div class="callout-accent" style="margin-top:1rem;">
+          <p>"Last game was the 1st time I saw a sadness in Kassidy. When we were leaving the fields she told her mom that she just wanted to play baseball."</p>
+          <cite>— Jeremiah Cargill, resignation note to Macaws team</cite>
+        </div>
+
+        <p>
+          The family formally resigned from the Macaws and submitted a letter to the team,
+          the GYGSA board complaint, and the league president — requesting both accountability
+          and systemic improvement for the other 6 girls still in the same situation.
+        </p>
+      </div>
+
+      <!-- Phase 4 -->
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-date">April 2023</span>
+          <span class="phase-name transition">&bull; The Arsenal Exception</span>
+        </div>
+        <p>
+          With the Macaws resignation filed, Jeremiah made a personal plea to GYBA president
+          Tommy Lockhart — asking for a mid-season exception to add Kassidy to her step-brothers'
+          baseball team, Romo's Arsenal. The VP had initially declined. The president approved it
+          himself the next morning.
+        </p>
+
+        <div class="callout-accent">
+          <p>"I have decided to make an exception to allow her to play. Your experience reaffirms why we have rotation rules in our lower divisions."</p>
+          <cite>— Tommy Lockhart, GYBA President &nbsp;&bull;&nbsp; April 4, 2023</cite>
+        </div>
+
+        <p>
+          Arsenal's coach Romo already had a spare jersey from a player who never showed.
+          Kassidy wore #21.
+        </p>
+      </div>
+
+      <!-- Phase 5 -->
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-date">April 2023</span>
+          <span class="phase-name breakout">&bull; Breakout Performance Phase</span>
+        </div>
+        <p>
+          Kassidy's first Arsenal game was documented play by play. She started at pitcher,
+          made the first two outs of the game — a fielded ground ball up the middle and a caught
+          pop-up in the first inning — then caught another pop fly at third base in the fourth.
+          She got a hit every time at bat and ran the bases with authority. Arsenal won, beating
+          the Gators — one of the top three teams in the league.
+        </p>
+        <p>
+          Coaches Romo and Mudd were the defining variable. They were described as hard on the
+          entire team, harder on their own kids, pushing everyone to make plays and correcting
+          every mistake without exception. In that environment, Kassidy didn't just keep up —
+          she absorbed corrections in real time. Her father wrote that you could literally watch
+          comprehension happen while coaches corrected her. Both coaches recognized her quickly.
+        </p>
+
+        <div class="tl">
+          <div class="tl-row">
+            <div class="tl-dot green"></div>
+            <div class="tl-text"><strong>Pitcher:</strong> Made the first two defensive outs of the game in the 1st inning</div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-dot green"></div>
+            <div class="tl-text"><strong>3rd base:</strong> Caught pop fly in the 4th inning</div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-dot green"></div>
+            <div class="tl-text"><strong>Plate:</strong> Hit every at-bat</div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-dot green"></div>
+            <div class="tl-text"><strong>Bases:</strong> Ran like her dad used to</div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-dot gold"></div>
+            <div class="tl-text"><strong>Result:</strong> Arsenal win over the Gators, top-3 team in the league</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 6 -->
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-date">May 2023</span>
+          <span class="phase-name champion">&bull; Championship Phase</span>
+        </div>
+        <p>
+          The growth translated. Kassidy contributed to a team that swept every championship
+          available to them: the opening tournament, the regular season #1 spot (secured in
+          the final game), and the end-of-season tournament — including wins over top-ranked opponents.
+        </p>
+
+        <div style="margin-top:1rem;">
+          <div class="champion-banner">
+            <div class="champion-num">1</div>
+            <div class="champion-text">Opening tournament &mdash; Romo's Arsenal, champions</div>
+          </div>
+          <div class="champion-banner">
+            <div class="champion-num">2</div>
+            <div class="champion-text">Regular season &mdash; Won final game to claim #1 in league standings</div>
+          </div>
+          <div class="champion-banner">
+            <div class="champion-num">3</div>
+            <div class="champion-text">End of season tournament &mdash; Arsenal take first, beat Phillies in round 1</div>
+          </div>
+        </div>
+
+        <p style="margin-top:1rem; font-size:0.85rem; color:var(--muted);">
+          Coach's words after the triple: "If you want to know what it's like to win the opening tournament,
+          regular season, AND the end of season tournament — look right here. This is what it looks like."
+        </p>
       </div>
     </section>
 
-    <section id="traits" class="panel">
+    <!-- ── SCOUTING ATTRIBUTES ── -->
+    <section id="attributes">
+      <h2>Scouting Attributes — 2023 Observed</h2>
+      <p style="margin-bottom:1.5rem;">
+        Ratings derived from documented game commentary, coach feedback, and play-by-play records
+        from the blog. Not self-reported.
+      </p>
+
+      <div class="chip-row">
+        <span class="chip">Pitcher</span>
+        <span class="chip">Catcher</span>
+        <span class="chip">1st Base</span>
+        <span class="chip">2nd Base</span>
+        <span class="chip">3rd Base</span>
+        <span class="chip">Shortstop</span>
+        <span class="chip">Outfield</span>
+      </div>
+
+      <div class="attr-row">
+        <span class="attr-label">Hustle</span>
+        <div class="attr-track"><div class="attr-fill" style="width:98%"></div></div>
+        <span class="attr-score">9.8</span>
+      </div>
+      <div class="attr-row">
+        <span class="attr-label">Coachability</span>
+        <div class="attr-track"><div class="attr-fill" style="width:96%"></div></div>
+        <span class="attr-score">9.6</span>
+      </div>
+      <div class="attr-row">
+        <span class="attr-label">Clutch / composure</span>
+        <div class="attr-track"><div class="attr-fill" style="width:94%"></div></div>
+        <span class="attr-score">9.4</span>
+      </div>
+      <div class="attr-row">
+        <span class="attr-label">Speed / baserunning</span>
+        <div class="attr-track"><div class="attr-fill" style="width:92%"></div></div>
+        <span class="attr-score">9.2</span>
+      </div>
+      <div class="attr-row">
+        <span class="attr-label">Catcher toughness</span>
+        <div class="attr-track"><div class="attr-fill" style="width:90%"></div></div>
+        <span class="attr-score">9.0</span>
+      </div>
+      <div class="attr-row">
+        <span class="attr-label">Field range</span>
+        <div class="attr-track"><div class="attr-fill" style="width:88%"></div></div>
+        <span class="attr-score">8.8</span>
+      </div>
+      <div class="attr-row">
+        <span class="attr-label">Plate contact</span>
+        <div class="attr-track"><div class="attr-fill" style="width:85%"></div></div>
+        <span class="attr-score">8.5</span>
+      </div>
+      <div class="attr-row">
+        <span class="attr-label">Power (developing)</span>
+        <div class="attr-track"><div class="attr-fill developing" style="width:70%"></div></div>
+        <span class="attr-score">7.0</span>
+      </div>
+    </section>
+
+    <!-- ── PLAYER IDENTITY EVOLUTION ── -->
+    <section id="identity">
       <h2>Player Identity Evolution</h2>
-      <div class="stats-grid">
-        <div class="metric"><span>Started As</span><strong>Catcher / Utility</strong></div>
-        <div class="metric"><span>Evolved Into</span><strong>Multi-Position Athlete</strong></div>
-        <div class="metric"><span>Growth Areas</span><strong>Pitcher + Infielder</strong></div>
-        <div class="metric"><span>Current Trend</span><strong>Complete Impact Player</strong></div>
+
+      <div class="identity-grid">
+        <div class="identity-cell">
+          <div class="identity-cell-label">Started As</div>
+          <div class="identity-cell-val">Catcher / Utility<br><span style="font-size:0.75rem; color:var(--muted); font-weight:400;">Boys baseball foundation</span></div>
+        </div>
+        <div class="identity-cell">
+          <div class="identity-cell-label">Evolved Into</div>
+          <div class="identity-cell-val">Multi-Position Athlete<br><span style="font-size:0.75rem; color:var(--muted); font-weight:400;">Full infield + pitching</span></div>
+        </div>
+        <div class="identity-cell">
+          <div class="identity-cell-label">Growth Areas</div>
+          <div class="identity-cell-val">Pitcher + Infielder<br><span style="font-size:0.75rem; color:var(--muted); font-weight:400;">Under demanding coaching</span></div>
+        </div>
+        <div class="identity-cell">
+          <div class="identity-cell-label">Current Trend</div>
+          <div class="identity-cell-val">Complete Impact Player<br><span style="font-size:0.75rem; color:var(--muted); font-weight:400;">All three phases of game</span></div>
+        </div>
       </div>
 
-      <div class="advanced-note">
-        <h3>Key Traits Identified</h3>
-        <p>Versatility across positions, speed and athleticism, grit and physical toughness, fast game-IQ growth, strong response to coaching, and a competitive drive that shows up in all phases of play.</p>
+      <h3 id="traits">Key Traits Identified</h3>
+      <p>
+        Versatility across all infield and outfield positions. Speed and athleticism — documented
+        from baserunning and from tagging out runners from left field. Physical toughness forged
+        in boys baseball. Fast game-IQ growth visible within single-game corrections.
+        Strong and immediate response to demanding coaching. A competitive drive that showed up
+        specifically in high-pressure situations — performing her best on the day the league
+        president came to watch.
+      </p>
+      <p>
+        What the record also shows: she did not disengage under mistreatment. She stayed on task,
+        made plays, and when the environment finally matched her level, she delivered immediately
+        and helped produce a triple championship.
+      </p>
+    </section>
+
+    <!-- ── CHARACTER VERDICT ── -->
+    <section id="verdict">
+      <h2>Character Verdict</h2>
+
+      <div class="verdict">
+        <p>
+          Kassidy Cargill's 2023 season is a story most athletes never have to live through:
+          benched, rotated to outfield as an afterthought, and told by a coach she isn't coachable —
+          then, in the same season, earning genuine respect from some of the hardest coaches in the
+          league by making plays that mattered in games that counted.
+        </p>
+        <p>
+          The defining image isn't a trophy. It's Kassidy tagging out runners from left field while
+          the league president watched — quiet, composed, proving the only point that needed proving.
+          The nickname earned that day — <strong style="color:var(--blue);">Clutch Cargill</strong> —
+          fits the full body of evidence.
+        </p>
+        <p>
+          What the blog documents isn't just athletic ability. It's a kid who came out of boys
+          baseball, walked into a situation designed to diminish her, and when given real
+          opportunity, responded with focus, hustle, coachability, and speed. The coaches who
+          pushed hardest recognized her first. The team that let her play won everything.
+        </p>
+        <p>
+          Her own words, walking off the Macaws field for the last time: <em style="color:#ffb3bb; font-weight:500;">"I just want to play baseball."</em>
+          That's the whole character right there.
+        </p>
       </div>
     </section>
+
   </main>
 
   <footer>
-    <p>Kass21 • #21 Kassidy Cargill</p>
+    <span>Kass21</span> &bull; #21 Kassidy Cargill
   </footer>
+
 </body>
 </html>

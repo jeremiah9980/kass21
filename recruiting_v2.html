@@ -4,67 +4,231 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kassidy Cargill | Elite Recruiting Profile</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="red_metal_theme.css" />
-  <link rel="stylesheet" href="hotshots_brand_kit.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #ffffff; --surf: #f4f6fa; --surf2: #eaecf4;
+      --border: #d5dae8; --border2: #b8c2d8;
+      --text: #0f1f3d; --muted: #6070a0; --dim: #2d4070;
+      --red: #cc2233; --red-d: rgba(204,34,51,0.08); --red-b: rgba(204,34,51,0.20);
+      --blue: #1a3a7a; --blue-d: rgba(26,58,122,0.07); --blue-b: rgba(26,58,122,0.18);
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Barlow', sans-serif; font-weight: 400; line-height: 1.7; min-height: 100vh; }
+
+    .brand-bar { background: var(--blue); border-bottom: 1px solid rgba(255,255,255,0.12); padding: 0.55rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+    .brand-bar span { color: #fff; }
+
+    /* video strip */
+    .video-strip { background: #000; border-bottom: 3px solid var(--red); }
+    .video-strip video { width: 100%; display: block; max-height: 460px; object-fit: cover; }
+    .video-strip-placeholder { width: 100%; height: 200px; background: var(--blue); display: flex; align-items: center; justify-content: center; }
+    .video-strip-placeholder p { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+
+    .hero { background: var(--blue); border-bottom: 3px solid var(--red); padding: 2.5rem 2rem 2rem; }
+    .hero-badge { display: inline-block; background: var(--red); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; margin-bottom: 0.75rem; }
+    .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.2rem, 5.5vw, 3.6rem); font-weight: 700; line-height: 1; color: #fff; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
+    .hero-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+
+    nav { background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; gap: 0; overflow-x: auto; }
+    nav a { display: inline-block; padding: 0.85rem 1rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+    nav a:hover { color: var(--red); border-bottom-color: var(--red); }
+
+    main { max-width: 900px; padding: 0 2rem 5rem; }
+    section { padding: 2.75rem 0 2rem; border-bottom: 1px solid var(--border); }
+    section:last-child { border-bottom: none; }
+
+    h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.45rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.4rem; padding-bottom: 0.55rem; border-bottom: 2px solid var(--red); }
+    h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin: 1.75rem 0 0.65rem; }
+    h3:first-of-type { margin-top: 0; }
+    p { font-size: 0.95rem; color: var(--dim); line-height: 1.7; margin-bottom: 0.85rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* eval rows */
+    .eval-table { width: 100%; border-collapse: collapse; }
+    .eval-table tr { border-bottom: 1px solid var(--border); }
+    .eval-table tr:last-child { border-bottom: none; }
+    .eval-table td { padding: 0.9rem 0; vertical-align: top; }
+    .eval-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); width: 110px; padding-right: 1.5rem; padding-top: 3px; }
+    .eval-rating { width: 80px; padding-right: 1.5rem; }
+    .eval-badge { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; }
+    .eval-badge.elite { background: var(--red-d); color: var(--red); border: 1px solid var(--red-b); }
+    .eval-badge.strong { background: var(--blue-d); color: var(--blue); border: 1px solid var(--blue-b); }
+    .eval-badge.plus { background: var(--surf2); color: var(--muted); border: 1px solid var(--border2); }
+    .eval-text { font-size: 0.9rem; color: var(--dim); line-height: 1.6; }
+
+    /* attr bars */
+    .attr-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.7rem; }
+    .attr-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; color: var(--dim); width: 140px; flex-shrink: 0; }
+    .attr-track { flex: 1; height: 3px; background: var(--border2); border-radius: 2px; overflow: hidden; }
+    .attr-fill { height: 3px; border-radius: 2px; background: var(--blue); }
+    .attr-fill.red { background: var(--red); }
+    .attr-score { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--text); width: 28px; text-align: right; }
+
+    /* metric grid */
+    .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin: 1.25rem 0; }
+    .metric-cell { background: var(--surf); padding: 1rem; }
+    .metric-val { font-family: 'Barlow Condensed', sans-serif; font-size: 1.55rem; font-weight: 700; color: var(--blue); line-height: 1; }
+    .metric-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+
+    /* season table */
+    .stat-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+    .stat-table th { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--border2); font-weight: 600; background: var(--surf2); white-space: nowrap; }
+    .stat-table td { padding: 0.55rem 0.7rem; color: var(--dim); border-bottom: 1px solid var(--border); white-space: nowrap; }
+    .stat-table tr:last-child td { border-bottom: none; }
+    .stat-table td.bold { font-weight: 600; color: var(--text); }
+    .stat-table td.season { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 600; color: var(--muted); }
+    .stat-table tr:hover td { background: var(--surf); }
+
+    /* contact block */
+    .contact-block { background: var(--blue); border-radius: 4px; padding: 1.5rem; }
+    .contact-row { display: flex; gap: 1rem; margin-bottom: 0.8rem; align-items: baseline; flex-wrap: wrap; }
+    .contact-row:last-child { margin-bottom: 0; }
+    .contact-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.5); width: 130px; flex-shrink: 0; }
+    .contact-val { font-size: 0.92rem; color: #fff; font-weight: 500; }
+    .contact-val a { color: #ffb3bb; text-decoration: none; }
+    .contact-val a:hover { text-decoration: underline; }
+
+    footer { background: var(--blue); border-top: 3px solid var(--red); padding: 1.25rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+    footer span { color: #fff; }
+  </style>
 </head>
 <body>
 
-  <section style="position:relative; height:65vh; overflow:hidden;">
-    <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
-      <source src="highlight.mp4" type="video/mp4">
-    </video>
-    <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);"></div>
-    <div style="position:absolute; bottom:40px; left:40px; color:white;">
-      <div class="impact-stamp">Impact Player</div>
-      <h1 style="font-size:56px; margin:12px 0 0;">#21 Kassidy Cargill</h1>
-      <p style="font-size:20px;">Utility • Speed • Power • Competitive Edge</p>
+<div class="brand-bar"><span>Kass21</span> &bull; Elite Recruiting Profile</div>
+
+<div class="video-strip">
+  <video src="highlight.mp4" autoplay muted loop playsinline>
+    <div class="video-strip-placeholder"><p>Highlight reel — highlight.mp4</p></div>
+  </video>
+</div>
+
+<header class="hero">
+  <div class="hero-badge">Impact Player</div>
+  <h1>#21 Kassidy Cargill</h1>
+  <p class="hero-sub">Utility &nbsp;&bull;&nbsp; Speed &nbsp;&bull;&nbsp; Power &nbsp;&bull;&nbsp; Competitive Edge</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="story.html">Story</a>
+  <a href="player-card.html">Player Card</a>
+</nav>
+
+<main>
+
+  <section id="eval">
+    <h2>Coach / Scout Evaluation</h2>
+    <table class="eval-table">
+      <tbody>
+        <tr>
+          <td class="eval-label">Overall</td>
+          <td class="eval-rating"><span class="eval-badge elite">Elite</span></td>
+          <td class="eval-text">Dynamic utility athlete with strong contact profile and elite basepath pressure. Plays with edge and consistent engagement across all phases of the game.</td>
+        </tr>
+        <tr>
+          <td class="eval-label">Hit Tool</td>
+          <td class="eval-rating"><span class="eval-badge strong">Plus</span></td>
+          <td class="eval-text">High-contact hitter with gap power and developing extra-base impact. Career .449 AVG and 80.56% contact rate in 2026 show a disciplined, repeatable approach.</td>
+        </tr>
+        <tr>
+          <td class="eval-label">Speed</td>
+          <td class="eval-rating"><span class="eval-badge elite">Elite</span></td>
+          <td class="eval-text">Game-changing on the bases. 94.87% stolen-base success rate across 74 career steals. Aggressive reads and first-step quickness force defensive breakdowns.</td>
+        </tr>
+        <tr>
+          <td class="eval-label">Defense</td>
+          <td class="eval-rating"><span class="eval-badge strong">Plus</span></td>
+          <td class="eval-text">Versatile defender with catcher toughness and strong instincts. Can be deployed at C, 1B, 2B, 3B, SS, or outfield — each position earned through real reps, not theory.</td>
+        </tr>
+        <tr>
+          <td class="eval-label">Power</td>
+          <td class="eval-rating"><span class="eval-badge plus">Growing</span></td>
+          <td class="eval-text">9 career home runs, .704 career SLG, .806 SLG in Spring 2025. Extra-base impact is accelerating. Swing profile has loft capability with increasing barrel command.</td>
+        </tr>
+        <tr>
+          <td class="eval-label">Makeup</td>
+          <td class="eval-rating"><span class="eval-badge elite">Elite</span></td>
+          <td class="eval-text">Competitive, resilient, coachable, responds quickly to feedback. Forged through early adversity and dual-sport competition. Performs best in high-pressure situations.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="tools">
+    <h2>Tool Grades</h2>
+    <div class="attr-row"><span class="attr-label">Baserunning / Speed</span><div class="attr-track"><div class="attr-fill" style="width:95%"></div></div><span class="attr-score">9.5</span></div>
+    <div class="attr-row"><span class="attr-label">Makeup / Coachability</span><div class="attr-track"><div class="attr-fill" style="width:96%"></div></div><span class="attr-score">9.6</span></div>
+    <div class="attr-row"><span class="attr-label">Contact / Hit Tool</span><div class="attr-track"><div class="attr-fill" style="width:90%"></div></div><span class="attr-score">9.0</span></div>
+    <div class="attr-row"><span class="attr-label">Plate Discipline</span><div class="attr-track"><div class="attr-fill" style="width:88%"></div></div><span class="attr-score">8.8</span></div>
+    <div class="attr-row"><span class="attr-label">Defensive Range</span><div class="attr-track"><div class="attr-fill" style="width:88%"></div></div><span class="attr-score">8.8</span></div>
+    <div class="attr-row"><span class="attr-label">Utility Versatility</span><div class="attr-track"><div class="attr-fill" style="width:92%"></div></div><span class="attr-score">9.2</span></div>
+    <div class="attr-row"><span class="attr-label">Raw Power</span><div class="attr-track"><div class="attr-fill red" style="width:72%"></div></div><span class="attr-score">7.2</span></div>
+  </section>
+
+  <section id="metrics">
+    <h2>Performance Metrics</h2>
+
+    <div class="metric-grid">
+      <div class="metric-cell"><div class="metric-val">.449</div><div class="metric-label">Career AVG</div></div>
+      <div class="metric-cell"><div class="metric-val">.520</div><div class="metric-label">Career OBP</div></div>
+      <div class="metric-cell"><div class="metric-val">.704</div><div class="metric-label">Career SLG</div></div>
+      <div class="metric-cell"><div class="metric-val">1.224</div><div class="metric-label">Career OPS</div></div>
+      <div class="metric-cell"><div class="metric-val">97</div><div class="metric-label">Career Hits</div></div>
+      <div class="metric-cell"><div class="metric-val">74</div><div class="metric-label">Career SB</div></div>
+      <div class="metric-cell"><div class="metric-val">9</div><div class="metric-label">Career HR</div></div>
+      <div class="metric-cell"><div class="metric-val">94.87%</div><div class="metric-label">SB Success</div></div>
+    </div>
+
+    <h3>Season-by-Season</h3>
+    <div style="overflow-x:auto;">
+      <table class="stat-table">
+        <thead>
+          <tr><th>Season</th><th>AVG</th><th>OBP</th><th>SLG</th><th>OPS</th><th>H</th><th>HR</th><th>SB</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="season">Spring 2024 — BNNS</td><td class="bold">.548</td><td>.560</td><td>.699</td><td class="bold">1.259</td><td>40</td><td>2</td><td>2</td></tr>
+          <tr><td class="season">Fall 2024 — BNNS</td><td class="bold">.314</td><td>.529</td><td>.400</td><td class="bold">.929</td><td>11</td><td>1</td><td>27</td></tr>
+          <tr><td class="season">Spring 2025 — HTSH</td><td class="bold">.426</td><td>.492</td><td>.806</td><td class="bold">1.297</td><td>46</td><td>6</td><td>45</td></tr>
+          <tr><td class="season">Fall 2025 — Hotshots 2K15</td><td class="bold">.495</td><td>.529</td><td>.667</td><td class="bold">1.196</td><td>46</td><td>1</td><td>26</td></tr>
+          <tr><td class="season">Spring 2026 — Hotshots 2K15</td><td class="bold">.389</td><td>.522</td><td>.667</td><td class="bold">1.188</td><td>14</td><td>2</td><td>16</td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <nav class="section-nav">
-    <a href="index.html">Home</a>
-    <a href="story.html">Story</a>
-    <a href="player-card.html">Player Card</a>
-  </nav>
+  <section id="contact">
+    <h2>Coach Contact</h2>
+    <div class="contact-block">
+      <div class="contact-row">
+        <span class="contact-label">Player</span>
+        <span class="contact-val">Kassidy Cargill &nbsp;•&nbsp; #21</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Instagram</span>
+        <span class="contact-val"><a href="https://instagram.com/kasscargill" target="_blank">@kasscargill</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Coach</span>
+        <span class="contact-val">Coach Mark Cortinas</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Organization</span>
+        <span class="contact-val">Hotshots 2K15 Cortinas</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Coach Contact</span>
+        <span class="contact-val" style="color:rgba(255,255,255,0.45); font-style:italic;">Add email / phone when ready</span>
+      </div>
+    </div>
+  </section>
 
-  <main>
-    <section class="panel">
-      <h2>Coach / Scout Evaluation</h2>
-      <p><strong>Overall:</strong> Dynamic utility athlete with strong contact profile and elite basepath pressure. Plays with edge and consistent engagement.</p>
-      <p><strong>Hit Tool:</strong> High-contact hitter with gap power and developing extra-base impact.</p>
-      <p><strong>Speed:</strong> Game-changing. 94.87% SB success with aggressive reads.</p>
-      <p><strong>Defense:</strong> Versatile defender with catcher toughness and strong instincts.</p>
-      <p><strong>Makeup:</strong> Competitive, resilient, coachable, responds quickly to feedback.</p>
-    </section>
+</main>
 
-    <section class="panel">
-      <h2>Performance Metrics</h2>
-      <canvas id="chart"></canvas>
-    </section>
-  </main>
+<footer><span>Kass21</span> &bull; #21 Kassidy Cargill</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    const ctx = document.getElementById('chart');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['AVG','OBP','OPS','SLG'],
-        datasets: [{
-          label: 'Career Metrics',
-          data: [0.449, 0.520, 1.224, 0.704]
-        }]
-      },
-      options: {
-        plugins: {
-          legend: { display: false }
-        },
-        scales: {
-          y: { beginAtZero: true }
-        }
-      }
-    });
-  </script>
 </body>
 </html>

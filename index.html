@@ -3,168 +3,318 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kassidy Cargill | Kass21</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="red_metal_theme.css" />
-  <link rel="stylesheet" href="hotshots_brand_kit.css" />
+  <title>#21 Kassidy Cargill</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #ffffff; --surf: #f4f6fa; --surf2: #eaecf4;
+      --border: #d5dae8; --border2: #b8c2d8;
+      --text: #0f1f3d; --muted: #6070a0; --dim: #2d4070;
+      --red: #cc2233; --red-d: rgba(204,34,51,0.08); --red-b: rgba(204,34,51,0.20);
+      --blue: #1a3a7a; --blue-d: rgba(26,58,122,0.07); --blue-b: rgba(26,58,122,0.18);
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Barlow', sans-serif; font-weight: 400; line-height: 1.7; min-height: 100vh; }
+
+    .brand-bar { background: var(--blue); border-bottom: 1px solid rgba(255,255,255,0.12); padding: 0.55rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+    .brand-bar span { color: #fff; }
+
+    .hero { background: var(--blue); border-bottom: 3px solid var(--red); padding: 3rem 2rem 2.5rem; }
+    .hero-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
+    .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; line-height: 1; color: #fff; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
+    .hero-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 0.9rem; }
+    .hero-desc { font-size: 0.95rem; color: rgba(255,255,255,0.68); max-width: 580px; line-height: 1.6; margin-bottom: 1.75rem; }
+    .hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 1.25rem; }
+    .hero-stat-val { font-family: 'Barlow Condensed', sans-serif; font-size: 1.75rem; font-weight: 700; color: #fff; line-height: 1; }
+    .hero-stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 3px; }
+
+    nav { background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; gap: 0; overflow-x: auto; }
+    nav a { display: inline-block; padding: 0.85rem 1rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+    nav a:hover { color: var(--red); border-bottom-color: var(--red); }
+
+    main { max-width: 900px; padding: 0 2rem 5rem; }
+
+    section { padding: 2.75rem 0 2rem; border-bottom: 1px solid var(--border); }
+    section:last-child { border-bottom: none; }
+
+    h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.45rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.4rem; padding-bottom: 0.55rem; border-bottom: 2px solid var(--red); }
+    h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin: 1.75rem 0 0.65rem; }
+    h3:first-of-type { margin-top: 0; }
+    p { font-size: 0.95rem; color: var(--dim); line-height: 1.7; margin-bottom: 0.85rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* metric grid */
+    .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin: 1.25rem 0; }
+    .metric-cell { background: var(--surf); padding: 1rem 1rem; }
+    .metric-val { font-family: 'Barlow Condensed', sans-serif; font-size: 1.55rem; font-weight: 700; color: var(--blue); line-height: 1; }
+    .metric-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+
+    /* timeline phases */
+    .phase { background: var(--surf); border: 1px solid var(--border); border-radius: 4px; padding: 1.1rem 1.25rem; margin-bottom: 0.85rem; }
+    .phase-header { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.55rem; flex-wrap: wrap; }
+    .phase-date { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .phase-name { font-family: 'Barlow Condensed', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; }
+    .phase-name.foundation { color: var(--muted); }
+    .phase-name.breakout   { color: var(--blue); }
+    .phase-name.transition { color: var(--blue); }
+    .phase-name.champion   { color: var(--red); }
+    .phase p { font-size: 0.9rem; }
+
+    /* stats table */
+    .stat-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; margin: 1rem 0; overflow-x: auto; display: block; }
+    .stat-table th { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--border2); font-weight: 600; background: var(--surf2); white-space: nowrap; }
+    .stat-table td { padding: 0.55rem 0.7rem; color: var(--dim); border-bottom: 1px solid var(--border); white-space: nowrap; }
+    .stat-table tr:last-child td { border-bottom: none; }
+    .stat-table td.bold { font-weight: 600; color: var(--text); }
+    .stat-table td.season { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 600; color: var(--muted); letter-spacing: 0.05em; }
+    .stat-table tr:hover td { background: var(--surf); }
+
+    /* advanced snapshot */
+    .adv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-top: 1.25rem; }
+    .adv-cell { background: var(--surf); padding: 0.85rem 1rem; }
+    .adv-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+    .adv-val { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--blue); }
+
+    /* instagram */
+    .ig-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .ig-card { background: var(--surf); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+    .ig-card-head { background: var(--blue); padding: 0.65rem 1rem; }
+    .ig-card-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; }
+    .ig-card-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 1px; }
+    .ig-card-body { padding: 0.9rem 1rem; }
+    .ig-card-body p { font-size: 0.85rem; color: var(--dim); margin-bottom: 0.6rem; }
+    .ig-link { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+    .ig-link:hover { text-decoration: underline; }
+
+    /* reel script */
+    .reel-item { padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
+    .reel-item:last-child { border-bottom: none; }
+    .reel-beat { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--red); margin-bottom: 3px; }
+    .reel-text { font-size: 0.92rem; color: var(--dim); line-height: 1.6; }
+
+    footer { background: var(--blue); border-top: 3px solid var(--red); padding: 1.25rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+    footer span { color: #fff; }
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">Kass21 • Athlete Profile</div>
-      <h1>#21 Kassidy Cargill</h1>
-      <div class="impact-stamp">Impact Player</div>
 
-      <div class="brand-lockup">
-        <div class="brand-lockup-badge">21</div>
-        <div class="brand-lockup-text">
-          <strong>Hotshots Softball</strong>
-          <span>Cortinas • 2K15</span>
+<div class="brand-bar"><span>Kass21</span> &bull; Athlete Profile</div>
+
+<header class="hero">
+  <p class="hero-eyebrow">Hotshots Softball &nbsp;&bull;&nbsp; 2K15 Cortinas &nbsp;&bull;&nbsp; Georgetown, TX</p>
+  <h1>#21 Kassidy Cargill</h1>
+  <p class="hero-sub">Impact Player</p>
+  <p class="hero-desc">Versatile, gritty, and game-changing. Kassidy brings catcher toughness, utility range, speed on the bases, and growing impact power at the plate.</p>
+  <div class="hero-stats">
+    <div><div class="hero-stat-val">#21</div><div class="hero-stat-label">Jersey</div></div>
+    <div><div class="hero-stat-val">.449</div><div class="hero-stat-label">Career AVG</div></div>
+    <div><div class="hero-stat-val">1.224</div><div class="hero-stat-label">Career OPS</div></div>
+    <div><div class="hero-stat-val">97</div><div class="hero-stat-label">Career Hits</div></div>
+    <div><div class="hero-stat-val">74</div><div class="hero-stat-label">Career SB</div></div>
+    <div><div class="hero-stat-val">94.87%</div><div class="hero-stat-label">SB Success</div></div>
+  </div>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#stats">Stats</a>
+  <a href="#instagram">Instagram</a>
+  <a href="#reel">Highlight Script</a>
+  <a href="recruiting_v2.html">Recruiting</a>
+  <a href="story.html">Story</a>
+  <a href="player-card.html">Player Card</a>
+</nav>
+
+<main>
+
+  <section id="about">
+    <h2>About #21</h2>
+    <p>Kassidy Cargill is a rising softball athlete whose game is built on toughness, versatility, speed, and impact. What first looked like a natural catcher profile expanded into something even more dynamic: a multi-position player who can make her presence felt in the field, on the bases, and at the plate.</p>
+    <p>Across her career, Kassidy has developed into a high-contact hitter with real pressure-player value. She owns a <strong>.449 career batting average</strong>, <strong>.520 OBP</strong>, <strong>1.224 OPS</strong>, <strong>97 career hits</strong>, and <strong>74 stolen bases</strong> with a <strong>94.87% stolen-base success rate</strong>.</p>
+
+    <div class="metric-grid">
+      <div class="metric-cell"><div class="metric-val">.449</div><div class="metric-label">Career AVG</div></div>
+      <div class="metric-cell"><div class="metric-val">.520</div><div class="metric-label">Career OBP</div></div>
+      <div class="metric-cell"><div class="metric-val">.704</div><div class="metric-label">Career SLG</div></div>
+      <div class="metric-cell"><div class="metric-val">1.224</div><div class="metric-label">Career OPS</div></div>
+      <div class="metric-cell"><div class="metric-val">97</div><div class="metric-label">Career Hits</div></div>
+      <div class="metric-cell"><div class="metric-val">9</div><div class="metric-label">Career HR</div></div>
+      <div class="metric-cell"><div class="metric-val">11</div><div class="metric-label">Career 3B</div></div>
+      <div class="metric-cell"><div class="metric-val">74</div><div class="metric-label">Career SB</div></div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <h2>Player Timeline</h2>
+
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-date">2023</span>
+        <span class="phase-name foundation">&bull; Foundation</span>
+      </div>
+      <p>Early development in Georgetown beginning in boys baseball at NAO, then transitioning through a difficult GYGSA softball experience before landing on Romo's Arsenal (GYBA). Established catcher instincts and utility identity across both leagues. Helped Arsenal win the opening tournament, take the #1 regular-season spot, and claim the end-of-season tournament — a triple championship in her first year of competitive baseball.</p>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-date">2024</span>
+        <span class="phase-name transition">&bull; Dual-Sport Growth</span>
+      </div>
+      <p>Played Panthers 10U D1 baseball while also competing with Bananas softball, accelerating athletic development through cross-sport reps. Faster reactions, stronger instincts, and a bigger all-around game emerged from the simultaneous competition environment. Posted a .548 AVG with the Bananas in Spring 2024 and began building her stolen-base profile in earnest (27 SB in the fall slate).</p>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-date">2025</span>
+        <span class="phase-name breakout">&bull; Breakout Progression</span>
+      </div>
+      <p>Transitioned into the Hotshots program and emerged as a high-impact offensive player. Spring 2025 stands as her peak offensive season: .426 AVG, .806 SLG, 1.297 OPS, 6 home runs, and 45 stolen bases. Extra-base power and basepath pressure combined into a complete offensive profile. Her identity as a utility athlete with elite contact and speed solidified in this season.</p>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-date">Spring 2026</span>
+        <span class="phase-name champion">&bull; Current Season</span>
+      </div>
+      <p>18–6 team record with continued offensive production. Posting a .389 AVG, .522 OBP, 1.188 OPS with a perfect 1.000 BB/K ratio and .421 BA with runners in scoring position. Five hard-hit balls and strong contact rate (80.56%) demonstrate a maturing approach at the plate.</p>
+    </div>
+  </section>
+
+  <section id="stats">
+    <h2>Stat Dashboard</h2>
+
+    <h3>Season-by-Season</h3>
+    <div style="overflow-x:auto;">
+      <table class="stat-table">
+        <thead>
+          <tr>
+            <th>Season</th>
+            <th>AVG</th>
+            <th>OBP</th>
+            <th>SLG</th>
+            <th>OPS</th>
+            <th>H</th>
+            <th>HR</th>
+            <th>3B</th>
+            <th>SB</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="season">Spring 2024 — BNNS</td>
+            <td class="bold">.548</td><td>.560</td><td>.699</td><td class="bold">1.259</td>
+            <td>40</td><td>2</td><td>—</td><td>2</td>
+          </tr>
+          <tr>
+            <td class="season">Fall 2024 — BNNS</td>
+            <td class="bold">.314</td><td>.529</td><td>.400</td><td class="bold">.929</td>
+            <td>11</td><td>1</td><td>—</td><td>27</td>
+          </tr>
+          <tr>
+            <td class="season">Spring 2025 — HTSH</td>
+            <td class="bold">.426</td><td>.492</td><td>.806</td><td class="bold">1.297</td>
+            <td>46</td><td>6</td><td>—</td><td>45</td>
+          </tr>
+          <tr>
+            <td class="season">Fall 2025 — Hotshots 2K15</td>
+            <td class="bold">.495</td><td>.529</td><td>.667</td><td class="bold">1.196</td>
+            <td>46</td><td>1</td><td>—</td><td>26</td>
+          </tr>
+          <tr>
+            <td class="season">Spring 2026 — Hotshots 2K15</td>
+            <td class="bold">.389</td><td>.522</td><td>.667</td><td class="bold">1.188</td>
+            <td>14</td><td>2</td><td>—</td><td>16</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Spring 2026 Advanced Snapshot</h3>
+    <div class="adv-grid">
+      <div class="adv-cell"><div class="adv-label">Contact %</div><div class="adv-val">80.56</div></div>
+      <div class="adv-cell"><div class="adv-label">BB / K</div><div class="adv-val">1.000</div></div>
+      <div class="adv-cell"><div class="adv-label">BABIP</div><div class="adv-val">.444</div></div>
+      <div class="adv-cell"><div class="adv-label">BA / RISP</div><div class="adv-val">.421</div></div>
+      <div class="adv-cell"><div class="adv-label">GB %</div><div class="adv-val">58.62</div></div>
+      <div class="adv-cell"><div class="adv-label">Hard Hit Balls</div><div class="adv-val">5</div></div>
+      <div class="adv-cell"><div class="adv-label">Team Record</div><div class="adv-val">18–6</div></div>
+      <div class="adv-cell"><div class="adv-label">SB Success</div><div class="adv-val">94.87%</div></div>
+    </div>
+  </section>
+
+  <section id="instagram">
+    <h2>Instagram Highlights</h2>
+    <p>Featured reels from <a href="https://instagram.com/kasscargill" style="color:var(--red); text-decoration:none; font-weight:500;">@kasscargill</a>.</p>
+    <div class="ig-grid" style="margin-top:1.25rem;">
+      <div class="ig-card">
+        <div class="ig-card-head">
+          <div class="ig-card-tag">#21 &nbsp;Speed</div>
+          <div class="ig-card-sub">@kasscargill</div>
+        </div>
+        <div class="ig-card-body">
+          <p>94.87% stolen-base success rate. Aggressive reads, first-step quickness, and basepath pressure that forces defensive mistakes.</p>
+          <a class="ig-link" href="https://www.instagram.com/reel/DOzhUEeAPxw/" target="_blank">View on Instagram &rarr;</a>
         </div>
       </div>
-
-      <p class="lead">Versatile, gritty, and game-changing. Kassidy brings catcher toughness, utility range, speed on the bases, and growing impact power at the plate.</p>
-
-      <div class="hero-stats">
-        <div class="stat-card"><span>Jersey</span><strong>#21</strong></div>
-        <div class="stat-card"><span>Career AVG</span><strong>.449</strong></div>
-        <div class="stat-card"><span>Career OPS</span><strong>1.224</strong></div>
-        <div class="stat-card"><span>Career Hits</span><strong>97</strong></div>
-        <div class="stat-card"><span>Career SB</span><strong>74</strong></div>
+      <div class="ig-card">
+        <div class="ig-card-head">
+          <div class="ig-card-tag">#21 &nbsp;Power</div>
+          <div class="ig-card-sub">@kasscargill</div>
+        </div>
+        <div class="ig-card-body">
+          <p>9 career home runs and a .704 career SLG. Growing extra-base impact with a swing built for gap power and developing loft.</p>
+          <a class="ig-link" href="https://www.instagram.com/reel/DWRMNXgANr9/" target="_blank">View on Instagram &rarr;</a>
+        </div>
+      </div>
+      <div class="ig-card">
+        <div class="ig-card-head">
+          <div class="ig-card-tag">#21 &nbsp;Defense</div>
+          <div class="ig-card-sub">@kasscargill</div>
+        </div>
+        <div class="ig-card-body">
+          <p>Catcher toughness with full infield range. Utility versatility across C, 1B, 2B, 3B, SS, and outfield — every position earned through reps.</p>
+          <a class="ig-link" href="https://www.instagram.com/reel/DVEUSjmAOhD/" target="_blank">View on Instagram &rarr;</a>
+        </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <nav class="section-nav">
-    <a href="#about">About</a>
-    <a href="#timeline">Timeline</a>
-    <a href="#stats">Stats</a>
-    <a href="#instagram">Instagram</a>
-    <a href="#reel">Highlight Script</a>
-    <a href="recruiting_v2.html">Recruiting</a>
-    <a href="story.html">Story</a>
-    <a href="player-card.html">Player Card</a>
-  </nav>
+  <section id="reel">
+    <h2>Highlight Reel Script</h2>
 
-  <main>
-    <section id="about" class="panel">
-      <h2>About #21</h2>
-      <p>Kassidy Cargill is a rising softball athlete whose game is built on toughness, versatility, speed, and impact. What first looked like a natural catcher profile expanded into something even more dynamic: a multi-position player who can make her presence felt in the field, on the bases, and at the plate.</p>
-      <p>Across her career, Kassidy has developed into a high-contact hitter with real pressure-player value. She owns a <strong>.449 career batting average</strong>, <strong>.520 OBP</strong>, <strong>1.224 OPS</strong>, <strong>97 career hits</strong>, and <strong>74 stolen bases</strong> with a <strong>94.87% stolen-base success rate</strong>.</p>
-    </section>
+    <div class="reel-item">
+      <div class="reel-beat">Opening</div>
+      <div class="reel-text">"#21 Kassidy Cargill brings toughness, speed, versatility, and a gritty style of play every time she steps on the field."</div>
+    </div>
+    <div class="reel-item">
+      <div class="reel-beat">Beat 1</div>
+      <div class="reel-text">"What first looked like a natural catcher profile quickly grew into something more — a true utility athlete who can impact the game in every phase."</div>
+    </div>
+    <div class="reel-item">
+      <div class="reel-beat">Beat 2</div>
+      <div class="reel-text">"In 2024, Kassidy balanced both baseball and softball, competing with the Panthers 10U D1 baseball team while also playing for the Bananas, building faster reactions, stronger instincts, and a bigger all-around game."</div>
+    </div>
+    <div class="reel-item">
+      <div class="reel-beat">Beat 3</div>
+      <div class="reel-text">"By 2025 and 2026, her offensive identity became even clearer: high contact, extra-base ability, and constant pressure on the bases."</div>
+    </div>
+    <div class="reel-item">
+      <div class="reel-beat">Beat 4</div>
+      <div class="reel-text">"With a career .449 batting average, 97 hits, 74 stolen bases, and growing power, Kassidy continues to develop into a complete impact player."</div>
+    </div>
+    <div class="reel-item">
+      <div class="reel-beat">Closing</div>
+      <div class="reel-text">"Whether #21 is making a play in the field, taking control on the bases, or driving the ball with authority, Kassidy plays with confidence, edge, and game-changing energy."</div>
+    </div>
+  </section>
 
-    <section id="timeline" class="panel">
-      <h2>Player Timeline</h2>
-      <div class="timeline">
-        <article>
-          <h3>2023 • Foundation</h3>
-          <p>Early development in Georgetown softball showing versatility and catcher instincts.</p>
-        </article>
-        <article>
-          <h3>2024 • Dual-Sport Growth</h3>
-          <p>Played Panthers 10U D1 baseball while also competing with Bananas softball, accelerating athletic development.</p>
-        </article>
-        <article>
-          <h3>2025 • Breakout Progression</h3>
-          <p>Transitioned into Hotshots program and emerged as a high-impact offensive player.</p>
-        </article>
-        <article>
-          <h3>Spring 2026</h3>
-          <p>18-6 team record with strong offensive production and continued growth.</p>
-        </article>
-      </div>
-    </section>
+</main>
 
-    <section id="stats" class="panel">
-      <h2>Stat Dashboard</h2>
-      <div class="stats-grid">
-        <div class="metric"><span>Career AVG</span><strong>.449</strong></div>
-        <div class="metric"><span>Career OBP</span><strong>.520</strong></div>
-        <div class="metric"><span>Career OPS</span><strong>1.224</strong></div>
-        <div class="metric"><span>Career SLG</span><strong>.704</strong></div>
-        <div class="metric"><span>Career Hits</span><strong>97</strong></div>
-        <div class="metric"><span>Career HR</span><strong>9</strong></div>
-        <div class="metric"><span>Career 3B</span><strong>11</strong></div>
-        <div class="metric"><span>Career SB</span><strong>74</strong></div>
-      </div>
+<footer><span>Kass21</span> &bull; #21 Kassidy Cargill</footer>
 
-      <div class="season-table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Season</th>
-              <th>AVG</th>
-              <th>OBP</th>
-              <th>OPS</th>
-              <th>SLG</th>
-              <th>H</th>
-              <th>HR</th>
-              <th>SB</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Spring 2024 – BNNS</td><td>.548</td><td>.560</td><td>1.259</td><td>.699</td><td>40</td><td>2</td><td>2</td></tr>
-            <tr><td>Fall 2024 – BNNS</td><td>.314</td><td>.529</td><td>.929</td><td>.400</td><td>11</td><td>1</td><td>27</td></tr>
-            <tr><td>Spring 2025 – HTSH</td><td>.426</td><td>.492</td><td>1.297</td><td>.806</td><td>46</td><td>6</td><td>45</td></tr>
-            <tr><td>Fall 2025 – Hotshots 2K15 Cortinas</td><td>.495</td><td>.529</td><td>1.196</td><td>.667</td><td>46</td><td>1</td><td>26</td></tr>
-            <tr><td>Spring 2026 – Hotshots 2K15</td><td>.389</td><td>.522</td><td>1.188</td><td>.667</td><td>14</td><td>2</td><td>16</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="advanced-note">
-        <h3>Spring 2026 Advanced Snapshot</h3>
-        <p><strong>Contact %:</strong> 80.56 • <strong>BB/K:</strong> 1.000 • <strong>BABIP:</strong> .444 • <strong>BA/RISP:</strong> .421 • <strong>GB%:</strong> 58.62 • <strong>HHB:</strong> 5</p>
-      </div>
-    </section>
-
-    <section id="instagram" class="panel">
-      <h2>Instagram Highlights</h2>
-      <p>Featured reels from <a class="instagram-link" href="https://instagram.com/kasscargill" target="_blank">@kasscargill</a>.</p>
-
-      <div class="instagram-embed-wrap">
-        <div class="instagram-card">
-          <div class="tag-row"><span class="highlight-tag">#21</span><span class="highlight-tag">Speed</span></div>
-          <h3>#21 • Speed</h3>
-          <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DOzhUEeAPxw/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px; max-width:540px; min-width:326px; padding:0; width:100%;">
-            <div style="padding:16px;"><a href="https://www.instagram.com/reel/DOzhUEeAPxw/?utm_source=ig_embed&amp;utm_campaign=loading" target="_blank" style="text-decoration:none;">View this post on Instagram</a></div>
-          </blockquote>
-        </div>
-
-        <div class="instagram-card">
-          <div class="tag-row"><span class="highlight-tag">#21</span><span class="highlight-tag">Power</span></div>
-          <h3>#21 • Power</h3>
-          <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DWRMNXgANr9/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px; max-width:540px; min-width:326px; padding:0; width:100%;">
-            <div style="padding:16px;"><a href="https://www.instagram.com/reel/DWRMNXgANr9/?utm_source=ig_embed&amp;utm_campaign=loading" target="_blank" style="text-decoration:none;">View this post on Instagram</a></div>
-          </blockquote>
-        </div>
-
-        <div class="instagram-card">
-          <div class="tag-row"><span class="highlight-tag">#21</span><span class="highlight-tag">Defense</span></div>
-          <h3>#21 • Defense</h3>
-          <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DVEUSjmAOhD/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px; max-width:540px; min-width:326px; padding:0; width:100%;">
-            <div style="padding:16px;"><a href="https://www.instagram.com/reel/DVEUSjmAOhD/?utm_source=ig_embed&amp;utm_campaign=loading" target="_blank" style="text-decoration:none;">View this post on Instagram</a></div>
-          </blockquote>
-        </div>
-      </div>
-      <script async src="//www.instagram.com/embed.js"></script>
-    </section>
-
-    <section id="reel" class="panel">
-      <h2>Highlight Reel Script</h2>
-      <div class="script">
-        <p><strong>Opening:</strong> “#21 Kassidy Cargill brings toughness, speed, versatility, and a gritty style of play every time she steps on the field.”</p>
-        <p><strong>Beat 1:</strong> “What first looked like a natural catcher profile quickly grew into something more — a true utility athlete who can impact the game in every phase.”</p>
-        <p><strong>Beat 2:</strong> “In 2024, Kassidy balanced both baseball and softball, competing with the Panthers 10U D1 baseball team while also playing for the Bananas, building faster reactions, stronger instincts, and a bigger all-around game.”</p>
-        <p><strong>Beat 3:</strong> “By 2025 and 2026, her offensive identity became even clearer: high contact, extra-base ability, and constant pressure on the bases.”</p>
-        <p><strong>Beat 4:</strong> “With a career .449 batting average, 97 hits, 74 stolen bases, and growing power, Kassidy continues to develop into a complete impact player.”</p>
-        <p><strong>Closing:</strong> “Whether #21 is making a play in the field, taking control on the bases, or driving the ball with authority, Kassidy plays with confidence, edge, and game-changing energy.”</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>Kass21 • #21 Kassidy Cargill</p>
-  </footer>
 </body>
 </html>
