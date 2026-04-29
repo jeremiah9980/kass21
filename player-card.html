@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="#21 Kassidy Cargill recruiting player card. Career stats, positions, coach contact — Hotshots 2K15 Cortinas." />
+  <meta property="og:title" content="#21 Kassidy Cargill — Player Card" />
+  <meta property="og:description" content=".449 AVG · 1.224 OPS · 94.87% SB success · Hotshots 2K15 Cortinas · Georgetown, TX" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jeremiah9980.github.io/kass21/player-card.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="#21 Kassidy Cargill — Player Card" />
+  <meta name="twitter:description" content=".449 AVG · 1.224 OPS · 94.87% SB success · Hotshots 2K15 Cortinas · Georgetown, TX" />
   <title>Kassidy Cargill | Player Card</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,6 +38,7 @@
     nav { background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; gap: 0; overflow-x: auto; }
     nav a { display: inline-block; padding: 0.85rem 1rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
     nav a:hover { color: var(--red); border-bottom-color: var(--red); }
+    nav > span { display: inline-block; width: 1px; background: var(--border2); margin: 0.4rem 0.25rem; align-self: stretch; }
 
     main { max-width: 900px; padding: 0 2rem 5rem; }
     section { padding: 2.75rem 0 2rem; border-bottom: 1px solid var(--border); }
@@ -80,23 +89,32 @@
 
     footer { background: var(--blue); border-top: 3px solid var(--red); padding: 1.25rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
     footer span { color: #fff; }
+    nav a.active, nav a[aria-current="page"] {
+      color: var(--red);
+      border-bottom-color: var(--red);
+    }
   </style>
 </head>
 <body>
 
 <div class="brand-bar"><span>Kass21</span> &bull; Player Card</div>
 
-<header class="hero">
+<header class="hero" style="position:relative;overflow:hidden;">
+  <div style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(5rem,18vw,10rem);font-weight:700;line-height:1;color:rgba(255,255,255,0.06);position:absolute;right:1.5rem;bottom:-0.1em;pointer-events:none;user-select:none;" aria-hidden="true">21</div>
   <p class="hero-eyebrow">Download-ready recruiting snapshot</p>
   <h1>#21 Kassidy Cargill</h1>
   <p class="hero-sub">Recruiting Snapshot</p>
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="recruiting_v2.html">Recruiting</a>
-  <a href="story.html">Story</a>
-</nav>
+    <a href="index.html">Home</a>
+    <a href="recruiting_v2.html">Recruiting</a>
+    <a href="story.html">Story</a>
+    <a href="player-card.html" aria-current="page" class="active">Player Card</a>
+    <span style="display:inline-block;width:1px;background:var(--border2);margin:0.4rem 0.3rem;align-self:stretch;"></span>
+    <a href="#card">Card</a>
+    <a href="#snapshot">Stats</a>
+  </nav>
 
 <main>
 
@@ -133,7 +151,7 @@
       </div>
 
       <!-- right: team / coach -->
-      <div class="card-panel dark">
+      <div class="card-panel dark" style="border-top:3px solid var(--red);">
         <div class="field-row-dark">
           <span class="field-label-dark">Organization</span>
           <span class="field-val-dark">Hotshots Softball</span>

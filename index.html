@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>#21 Kassidy Cargill</title>
+  <meta name="description" content="#21 Kassidy Cargill — Hotshots Softball, 2K15 Cortinas. .449 career AVG, 1.224 OPS, 74 stolen bases. Georgetown, TX." />
+  <meta property="og:title" content="#21 Kassidy Cargill — Athlete Profile" />
+  <meta property="og:description" content="Versatile utility athlete. .449 AVG · 1.224 OPS · 94.87% SB success. Georgetown, TX." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jeremiah9980.github.io/kass21/index.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="#21 Kassidy Cargill — Athlete Profile" />
+  <meta name="twitter:description" content="Versatile utility athlete. .449 AVG · 1.224 OPS · 94.87% SB success. Georgetown, TX." />
+  <title>Kassidy Cargill | #21 Athlete Profile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
@@ -22,7 +30,7 @@
     .brand-bar { background: var(--blue); border-bottom: 1px solid rgba(255,255,255,0.12); padding: 0.55rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
     .brand-bar span { color: #fff; }
 
-    .hero { background: var(--blue); border-bottom: 3px solid var(--red); padding: 3rem 2rem 2.5rem; }
+    .hero { background: var(--blue); border-bottom: 3px solid var(--red); padding: 3rem 2rem 2.5rem; position: relative; overflow: hidden; }
     .hero-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
     .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; line-height: 1; color: #fff; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
     .hero-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 0.9rem; }
@@ -34,6 +42,7 @@
     nav { background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; gap: 0; overflow-x: auto; }
     nav a { display: inline-block; padding: 0.85rem 1rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
     nav a:hover { color: var(--red); border-bottom-color: var(--red); }
+    nav > span { display: inline-block; width: 1px; background: var(--border2); margin: 0.4rem 0.25rem; align-self: stretch; }
 
     main { max-width: 900px; padding: 0 2rem 5rem; }
 
@@ -95,8 +104,18 @@
     .reel-beat { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--red); margin-bottom: 3px; }
     .reel-text { font-size: 0.92rem; color: var(--dim); line-height: 1.6; }
 
+    /* ── INSTAGRAM EMBEDS ── */
+    .ig-embed-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; align-items: start; }
+    .ig-embed-wrap { display: flex; flex-direction: column; gap: 0.5rem; }
+    .ig-embed-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em; color: var(--dim); padding: 0 2px; }
+    .ig-embed-tag { display: inline-block; background: var(--red-d); color: var(--red); border: 1px solid var(--red-b); font-weight: 700; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 1px 7px; border-radius: 2px; margin-right: 4px; }
+
     footer { background: var(--blue); border-top: 3px solid var(--red); padding: 1.25rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
     footer span { color: #fff; }
+    nav a.active, nav a[aria-current="page"] {
+      color: var(--red);
+      border-bottom-color: var(--red);
+    }
   </style>
 </head>
 <body>
@@ -104,6 +123,7 @@
 <div class="brand-bar"><span>Kass21</span> &bull; Athlete Profile</div>
 
 <header class="hero">
+  <div style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(5rem,18vw,10rem);font-weight:700;line-height:1;color:rgba(255,255,255,0.06);position:absolute;right:1.5rem;bottom:-0.2em;pointer-events:none;user-select:none;" aria-hidden="true">21</div>
   <p class="hero-eyebrow">Hotshots Softball &nbsp;&bull;&nbsp; 2K15 Cortinas &nbsp;&bull;&nbsp; Georgetown, TX</p>
   <h1>#21 Kassidy Cargill</h1>
   <p class="hero-sub">Impact Player</p>
@@ -119,20 +139,22 @@
 </header>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#timeline">Timeline</a>
-  <a href="#stats">Stats</a>
-  <a href="#instagram">Instagram</a>
-  <a href="#reel">Highlight Script</a>
-  <a href="recruiting_v2.html">Recruiting</a>
-  <a href="story.html">Story</a>
-  <a href="player-card.html">Player Card</a>
-</nav>
+    <a href="index.html" aria-current="page" class="active">Home</a>
+    <a href="recruiting_v2.html">Recruiting</a>
+    <a href="story.html">Story</a>
+    <a href="player-card.html">Player Card</a>
+    <span style="display:inline-block;width:1px;background:var(--border2);margin:0.4rem 0.3rem;align-self:stretch;"></span>
+    <a href="#about">About</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#stats">Stats</a>
+    <a href="#instagram">Instagram</a>
+    <a href="#reel">Highlights</a>
+  </nav>
 
 <main>
 
   <section id="about">
-    <h2>About #21</h2>
+    <h2>Player Profile</h2>
     <p>Kassidy Cargill is a rising softball athlete whose game is built on toughness, versatility, speed, and impact. What first looked like a natural catcher profile expanded into something even more dynamic: a multi-position player who can make her presence felt in the field, on the bases, and at the plate.</p>
     <p>Across her career, Kassidy has developed into a high-contact hitter with real pressure-player value. She owns a <strong>.449 career batting average</strong>, <strong>.520 OBP</strong>, <strong>1.224 OPS</strong>, <strong>97 career hits</strong>, and <strong>74 stolen bases</strong> with a <strong>94.87% stolen-base success rate</strong>.</p>
 
@@ -149,7 +171,7 @@
   </section>
 
   <section id="timeline">
-    <h2>Player Timeline</h2>
+    <h2>Development Timeline</h2>
 
     <div class="phase">
       <div class="phase-header">
@@ -246,45 +268,51 @@
     </div>
   </section>
 
-  <section id="instagram">
+    <section id="instagram">
     <h2>Instagram Highlights</h2>
-    <p>Featured reels from <a href="https://instagram.com/kasscargill" style="color:var(--red); text-decoration:none; font-weight:500;">@kasscargill</a>.</p>
-    <div class="ig-grid" style="margin-top:1.25rem;">
-      <div class="ig-card">
-        <div class="ig-card-head">
-          <div class="ig-card-tag">#21 &nbsp;Speed</div>
-          <div class="ig-card-sub">@kasscargill</div>
-        </div>
-        <div class="ig-card-body">
-          <p>94.87% stolen-base success rate. Aggressive reads, first-step quickness, and basepath pressure that forces defensive mistakes.</p>
-          <a class="ig-link" href="https://www.instagram.com/reel/DOzhUEeAPxw/" target="_blank">View on Instagram &rarr;</a>
-        </div>
+    <p style="margin-bottom:1.5rem;">Featured reels from <a href="https://instagram.com/kasscargill" style="color:var(--red);text-decoration:none;font-weight:500;" target="_blank">@kasscargill</a>.</p>
+
+    <div class="ig-embed-grid">
+
+      <div class="ig-embed-wrap">
+        <div class="ig-embed-label"><span class="ig-embed-tag">Speed</span> Basepath pressure &amp; stolen-base instincts</div>
+        <blockquote class="instagram-media"
+          data-instgrm-captioned
+          data-instgrm-permalink="https://www.instagram.com/reel/DOzhUEeAPxw/?utm_source=ig_embed"
+          data-instgrm-version="14"
+          style="background:#fff;border:0;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.12);margin:0;min-width:0;padding:0;width:100%;">
+          <div style="padding:1rem;text-align:center;"><a href="https://www.instagram.com/reel/DOzhUEeAPxw/" target="_blank" style="color:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;">View Speed Reel &rarr;</a></div>
+        </blockquote>
       </div>
-      <div class="ig-card">
-        <div class="ig-card-head">
-          <div class="ig-card-tag">#21 &nbsp;Power</div>
-          <div class="ig-card-sub">@kasscargill</div>
-        </div>
-        <div class="ig-card-body">
-          <p>9 career home runs and a .704 career SLG. Growing extra-base impact with a swing built for gap power and developing loft.</p>
-          <a class="ig-link" href="https://www.instagram.com/reel/DWRMNXgANr9/" target="_blank">View on Instagram &rarr;</a>
-        </div>
+
+      <div class="ig-embed-wrap">
+        <div class="ig-embed-label"><span class="ig-embed-tag">Power</span> Extra-base impact &amp; developing loft</div>
+        <blockquote class="instagram-media"
+          data-instgrm-captioned
+          data-instgrm-permalink="https://www.instagram.com/reel/DWRMNXgANr9/?utm_source=ig_embed"
+          data-instgrm-version="14"
+          style="background:#fff;border:0;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.12);margin:0;min-width:0;padding:0;width:100%;">
+          <div style="padding:1rem;text-align:center;"><a href="https://www.instagram.com/reel/DWRMNXgANr9/" target="_blank" style="color:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;">View Power Reel &rarr;</a></div>
+        </blockquote>
       </div>
-      <div class="ig-card">
-        <div class="ig-card-head">
-          <div class="ig-card-tag">#21 &nbsp;Defense</div>
-          <div class="ig-card-sub">@kasscargill</div>
-        </div>
-        <div class="ig-card-body">
-          <p>Catcher toughness with full infield range. Utility versatility across C, 1B, 2B, 3B, SS, and outfield — every position earned through reps.</p>
-          <a class="ig-link" href="https://www.instagram.com/reel/DVEUSjmAOhD/" target="_blank">View on Instagram &rarr;</a>
-        </div>
+
+      <div class="ig-embed-wrap">
+        <div class="ig-embed-label"><span class="ig-embed-tag">Defense</span> Utility range &amp; catcher toughness</div>
+        <blockquote class="instagram-media"
+          data-instgrm-captioned
+          data-instgrm-permalink="https://www.instagram.com/reel/DVEUSjmAOhD/?utm_source=ig_embed"
+          data-instgrm-version="14"
+          style="background:#fff;border:0;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.12);margin:0;min-width:0;padding:0;width:100%;">
+          <div style="padding:1rem;text-align:center;"><a href="https://www.instagram.com/reel/DVEUSjmAOhD/" target="_blank" style="color:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;">View Defense Reel &rarr;</a></div>
+        </blockquote>
       </div>
+
     </div>
+    <script async src="//www.instagram.com/embed.js"></script>
   </section>
 
   <section id="reel">
-    <h2>Highlight Reel Script</h2>
+    <h2>Highlight Script</h2>
 
     <div class="reel-item">
       <div class="reel-beat">Opening</div>

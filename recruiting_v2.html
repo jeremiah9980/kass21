@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="#21 Kassidy Cargill — elite recruiting profile. .449 AVG, 94.87% SB success, utility versatility, Hotshots 2K15 Cortinas." />
+  <meta property="og:title" content="#21 Kassidy Cargill — Elite Recruiting Profile" />
+  <meta property="og:description" content="Dynamic utility athlete. High contact, elite speed, catcher toughness. .449 AVG · 1.224 OPS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jeremiah9980.github.io/kass21/recruiting_v2.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="#21 Kassidy Cargill — Elite Recruiting Profile" />
+  <meta name="twitter:description" content="Dynamic utility athlete. High contact, elite speed, catcher toughness. .449 AVG · 1.224 OPS." />
   <title>Kassidy Cargill | Elite Recruiting Profile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,6 +44,7 @@
     nav { background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; gap: 0; overflow-x: auto; }
     nav a { display: inline-block; padding: 0.85rem 1rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
     nav a:hover { color: var(--red); border-bottom-color: var(--red); }
+    nav > span { display: inline-block; width: 1px; background: var(--border2); margin: 0.4rem 0.25rem; align-self: stretch; }
 
     main { max-width: 900px; padding: 0 2rem 5rem; }
     section { padding: 2.75rem 0 2rem; border-bottom: 1px solid var(--border); }
@@ -94,6 +103,10 @@
 
     footer { background: var(--blue); border-top: 3px solid var(--red); padding: 1.25rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
     footer span { color: #fff; }
+    nav a.active, nav a[aria-current="page"] {
+      color: var(--red);
+      border-bottom-color: var(--red);
+    }
   </style>
 </head>
 <body>
@@ -101,10 +114,27 @@
 <div class="brand-bar"><span>Kass21</span> &bull; Elite Recruiting Profile</div>
 
 <div class="video-strip">
-  <video src="highlight.mp4" autoplay muted loop playsinline>
-    <div class="video-strip-placeholder"><p>Highlight reel — highlight.mp4</p></div>
+  <video src="highlight.mp4" autoplay muted loop playsinline
+    style="width:100%;display:block;max-height:460px;object-fit:cover;">
   </video>
+  <noscript>
+    <div class="video-strip-placeholder"><p>Highlight reel — highlight.mp4</p></div>
+  </noscript>
 </div>
+<script>
+  (function(){
+    var v = document.querySelector('.video-strip video');
+    if(v){
+      v.addEventListener('error', function(){
+        var d = document.createElement('div');
+        d.className = 'video-strip-placeholder';
+        d.innerHTML = '<p>Highlight reel coming soon &nbsp;&bull;&nbsp; <a href="https://instagram.com/kasscargill" target="_blank" style="color:#ffb3bb;text-decoration:none;">@kasscargill on Instagram</a></p>';
+        v.parentNode.insertBefore(d, v);
+        v.style.display = 'none';
+      });
+    }
+  })();
+</script>
 
 <header class="hero">
   <div class="hero-badge">Impact Player</div>
@@ -113,10 +143,16 @@
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="story.html">Story</a>
-  <a href="player-card.html">Player Card</a>
-</nav>
+    <a href="index.html">Home</a>
+    <a href="recruiting_v2.html" aria-current="page" class="active">Recruiting</a>
+    <a href="story.html">Story</a>
+    <a href="player-card.html">Player Card</a>
+    <span style="display:inline-block;width:1px;background:var(--border2);margin:0.4rem 0.3rem;align-self:stretch;"></span>
+    <a href="#eval">Evaluation</a>
+    <a href="#tools">Tool Grades</a>
+    <a href="#metrics">Stats</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
 <main>
 
