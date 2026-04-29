@@ -117,17 +117,15 @@
     .ig-embed-tag { display: inline-block; background: var(--red-d); color: var(--red); border: 1px solid var(--red-b); font-weight: 700; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 1px 7px; border-radius: 2px; margin-right: 4px; }
 
 
-    /* ── TEAM USA FEATURE ── */
+        /* ── TEAM USA FEATURE ── */
     .usa-section {
       padding: 0;
       border-bottom: 1px solid var(--border);
     }
     .usa-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      padding: 2.5rem 0 1.5rem;
-      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 1.5rem;
     }
     .usa-eyebrow {
       font-family: 'Barlow Condensed', sans-serif;
@@ -137,99 +135,42 @@
       text-transform: uppercase;
       color: var(--red);
     }
-    /* Hero portrait — full bleed feature card */
-    .usa-portrait-wrap {
-      position: relative;
-      border-radius: 4px;
-      overflow: hidden;
-      background: var(--blue);
-      margin-bottom: 1px;
-    }
-    .usa-portrait-wrap img {
-      width: 100%;
-      max-width: 100%;
-      max-height: 380px;
-      object-fit: contain;
-      object-position: top center;
-      display: block;
-      margin: 0 auto;
-    }
-    .usa-portrait-badge {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(10,26,70,0.95) 0%, rgba(10,26,70,0.6) 60%, transparent 100%);
-      padding: 3rem 1.5rem 1.25rem;
-    }
-    .usa-portrait-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 1;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.3rem;
-    }
-    .usa-portrait-sub {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-    }
-    .usa-portrait-tag {
-      display: inline-block;
-      background: var(--red);
-      color: #fff;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 2px;
-      margin-bottom: 0.6rem;
-    }
-    /* Two supporting photos */
-    .usa-duo {
+    /* Three-across photo row */
+    .usa-trio {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 1100px;
+      margin: 0 auto 0;
     }
-    @media (max-width: 500px) { .usa-duo { grid-template-columns: 1fr; } }
-    .usa-duo-cell {
+    @media (max-width: 700px) { .usa-trio { grid-template-columns: 1fr; } }
+    .usa-trio-cell {
       position: relative;
-      background: var(--blue);
+      background: var(--surf);
       overflow: hidden;
+      border-radius: 2px;
     }
-    .usa-duo-cell img {
+    .usa-trio-cell img {
       width: 100%;
-      max-height: 320px;
+      height: 420px;
       object-fit: contain;
       object-position: top center;
       display: block;
-      background: var(--surf);
+      background: var(--surf2);
     }
-
-    .usa-duo-caption {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      background: linear-gradient(to top, rgba(10,26,70,0.9) 0%, transparent 100%);
-      padding: 1.5rem 1rem 0.75rem;
+    .usa-trio-caption {
+      background: var(--blue);
+      padding: 0.55rem 0.85rem;
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.6);
     }
-    .usa-duo-caption strong {
-      display: block;
-      font-size: 0.88rem;
+    .usa-trio-caption strong {
       color: #fff;
-      margin-bottom: 1px;
+      margin-right: 0.35rem;
     }
 
     footer { background: var(--blue); border-top: 3px solid var(--red); }
@@ -281,39 +222,36 @@
 
 <!-- ── TEAM USA ── -->
   <section id="teamusa" class="usa-section">
-    <div class="usa-header" style="max-width:1100px;margin:0 auto;padding-left:2rem;padding-right:2rem;">
+    <div class="usa-header">
       <span class="usa-eyebrow">Team USA &nbsp;&bull;&nbsp; 10U &nbsp;&bull;&nbsp; 2026</span>
     </div>
 
-    <!-- Feature portrait -->
-    <div class="usa-portrait-wrap">
-      <img
-        src="usa-official-portrait-2026.jpeg"
-        alt="Kassidy Cargill — Team USA official portrait, #21, 10U, 2026. Standing at home plate with American flag backdrop."
-      />
-      <div class="usa-portrait-badge">
-        <div class="usa-portrait-tag">Made in USA</div>
-        <div class="usa-portrait-title">#21 Kassidy Cargill</div>
-        <div class="usa-portrait-sub">Team USA &nbsp;&bull;&nbsp; 10U &nbsp;&bull;&nbsp; 2026</div>
-      </div>
-    </div>
+    <div class="usa-trio">
 
-    <!-- Duo row -->
-    <div class="usa-duo">
-      <div class="usa-duo-cell">
+      <div class="usa-trio-cell">
+        <img
+          src="usa-official-portrait-2026.jpeg"
+          alt="Kassidy Cargill — Team USA official portrait #21, 10U 2026, American flag backdrop"
+        />
+        <div class="usa-trio-caption"><strong>Made in USA</strong>Official Portrait &bull; 2026</div>
+      </div>
+
+      <div class="usa-trio-cell">
         <img
           src="usa-night-ghost-bat.jpeg"
-          alt="Kassidy Cargill — night game photo in navy USA jersey with star-and-stripe sleeves, Ghost bat over shoulders at home plate."
+          alt="Kassidy Cargill — navy USA jersey with star-stripe sleeves, Ghost bat at home plate, night game"
         />
-        <div class="usa-duo-caption"><strong>Ghost Bat</strong>Night Game Ready</div>
+        <div class="usa-trio-caption"><strong>Ghost Bat</strong>Night Game Ready</div>
       </div>
-      <div class="usa-duo-cell">
+
+      <div class="usa-trio-cell">
         <img
           src="usa-action-celebration.png"
-          alt="Kassidy Cargill — action celebration shot in USA uniform, mud-covered, exuberant, holding green bats."
+          alt="Kassidy Cargill — USA uniform, mud-covered celebration"
         />
-        <div class="usa-duo-caption"><strong>All Out</strong>That's the attitude</div>
+        <div class="usa-trio-caption"><strong>All Out</strong>That's the attitude</div>
       </div>
+
     </div>
   </section>
 
@@ -555,4 +493,3 @@
 
 </body>
 </html>
-
