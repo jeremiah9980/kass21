@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="theme-color" content="#0b1e42" />
   <title>Kassidy Cargill | #21 · 2K15 · Georgetown TX</title>
   <meta name="description" content="#21 Kassidy Cargill — Hotshots 2K15, Georgetown TX. .449 career AVG, 94.87% SB success. Team USA 10U 2026. Impact utility athlete." />
   <meta property="og:title" content="#21 Kassidy Cargill — 2K15 Impact Player" />
@@ -43,19 +47,39 @@
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
 
+
+    /* == iOS BASE == */
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    *, *::before, *::after {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    img, video { max-width: 100%; }
+
     /* ── NAV ── */
     .nav {
+      position: -webkit-sticky;
       position: sticky;
       top: 0;
       z-index: 100;
       background: rgba(11,30,66,0.97);
+      -webkit-backdrop-filter: blur(8px);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-top: env(safe-area-inset-top);
     }
     .nav-inner {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 max(1.5rem, env(safe-area-inset-right));
+      padding-left: max(1.5rem, env(safe-area-inset-left));
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -93,8 +117,12 @@
       text-transform: uppercase;
       background: var(--red);
       color: #fff;
-      padding: 0.4rem 1rem;
+      padding: 0.55rem 1rem;
       border-radius: 2px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      -webkit-appearance: none;
       transition: background 0.15s;
     }
     .nav-cta:hover { background: var(--red2); }
@@ -568,7 +596,9 @@
       flex-shrink: 0;
     }
     .btn-primary {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: var(--red);
       color: #fff;
       font-weight: 600;
@@ -578,12 +608,16 @@
       padding: 0.9rem 2rem;
       border-radius: 3px;
       text-align: center;
-      transition: background 0.15s, transform 0.1s;
+      min-height: 44px;
+      -webkit-appearance: none;
+      transition: background 0.15s;
       white-space: nowrap;
     }
     .btn-primary:hover { background: #e0001f; transform: translateY(-1px); }
     .btn-secondary {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       border: 1px solid rgba(255,255,255,0.25);
       color: rgba(255,255,255,0.7);
       font-weight: 500;
@@ -593,6 +627,8 @@
       padding: 0.9rem 2rem;
       border-radius: 3px;
       text-align: center;
+      min-height: 44px;
+      -webkit-appearance: none;
       transition: border-color 0.15s, color 0.15s;
       white-space: nowrap;
     }
@@ -686,16 +722,118 @@
     .vbadge.double { background:rgba(180,120,0,0.2); color:#d4a040; border:1px solid rgba(180,120,0,0.35); }
     .vcard-date { font-size:0.8rem; font-weight:600; color:#fff; line-height:1.2; }
     .vcard-context { font-size:0.68rem; color:rgba(255,255,255,0.35); margin-top:2px; }
-    .vmodal { display:none; position:fixed; inset:0; background:rgba(8,15,34,0.92); z-index:500; align-items:center; justify-content:center; padding:1rem; }
+    .vmodal { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(8,15,34,0.92); z-index:500; align-items:center; justify-content:center; padding:max(1rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom)); -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
     .vmodal.open { display:flex; }
-    .vmodal-box { background:#0d1a35; border:1px solid rgba(255,255,255,0.12); border-radius:6px; overflow:hidden; width:100%; max-width:860px; }
+    .vmodal-box { background:#0d1a35; border:1px solid rgba(255,255,255,0.12); border-radius:6px; overflow:hidden; width:100%; max-width:860px; max-height:90vh; display:flex; flex-direction:column; }
     .vmodal-header { display:flex; align-items:center; justify-content:space-between; padding:1rem 1.25rem; border-bottom:1px solid rgba(255,255,255,0.08); gap:1rem; }
     .vmodal-badge { font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:2px; }
     .vmodal-title { font-family:'Bebas Neue',sans-serif; font-size:1.3rem; color:#fff; letter-spacing:0.06em; line-height:1; }
     .vmodal-sub { font-size:0.72rem; color:rgba(255,255,255,0.4); margin-top:2px; }
     .vmodal-close { background:rgba(255,255,255,0.08); border:none; color:rgba(255,255,255,0.6); width:32px; height:32px; border-radius:50%; cursor:pointer; font-size:0.75rem; transition:background 0.15s,color 0.15s; flex-shrink:0; }
     .vmodal-close:hover { background:rgba(255,255,255,0.16); color:#fff; }
-    .vmodal-player { aspect-ratio:16/9; background:#000; }
+    .vmodal-player { position:relative; padding-bottom:56.25%; height:0; background:#000; flex:1; }
+    .vmodal-player iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+
+
+    /* == STAT DASHBOARD == */
+    .dash-sub { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.08em; color: var(--navy); margin-bottom: 0.75rem; }
+    .dash-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--border); border-radius: 6px; }
+    .dash-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; min-width: 640px; }
+    .dash-table thead tr { background: var(--navy); }
+    .dash-table th { font-family: 'DM Mono', monospace; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); padding: 0.75rem 0.9rem; text-align: left; white-space: nowrap; }
+    .dash-table th.r { text-align: right; }
+    .dash-table td { padding: 0.75rem 0.9rem; border-bottom: 1px solid var(--border); color: var(--dim); white-space: nowrap; }
+    .dash-table td.r { text-align: right; font-family: 'DM Mono', monospace; font-size: 0.85rem; }
+    .dash-table tr:last-child td { border-bottom: none; }
+    .dash-table tr:hover td { background: var(--light); }
+    .dash-table td.s-name { font-weight: 600; color: var(--navy); }
+    .dash-table td.s-team { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+    .dash-table td.s-bold { font-weight: 700; color: var(--navy); }
+    .dash-table td.s-ops { font-weight: 700; color: var(--red); }
+    .dash-table td.s-total { font-weight: 700; color: var(--navy); font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .dash-table tfoot td { background: var(--off); border-top: 2px solid var(--border); font-weight: 600; }
+    .dash-table td.t-bnns { color: #c8760a; }
+    .dash-table td.t-htsh { color: #1a3a7a; }
+    .adv-grid-ld { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+    .adv-cell-ld { background: var(--white); padding: 0.85rem 1rem; text-align: center; }
+    .adv-lbl { font-family: 'DM Mono', monospace; font-size: 0.58rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .adv-num { font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem; color: var(--navy); line-height: 1; }
+    .adv-num.red { color: var(--red); }
+    /* == CHARACTER PROFILE GRID == */
+    .char-grid { display: grid; grid-template-columns: 340px 1fr; gap: 2.5rem; align-items: start; }
+    @media (max-width: 750px) { .char-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+    /* == JOURNEY GRID == */
+    .journey-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; align-items: start; }
+    @media (max-width: 900px) { .journey-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .journey-grid { grid-template-columns: 1fr; } }
+
+
+    /* == iOS MOBILE OVERRIDES == */
+    @media (max-width: 480px) {
+
+      /* Reduce section padding */
+      .section { padding: 3rem 1.25rem; }
+      .section-inner { width: 100%; }
+
+      /* Hero text scale */
+      .hero-name { font-size: clamp(2.8rem, 10vw, 4rem); }
+      .hero-tagline { font-size: 0.9rem; }
+
+      /* Stat strip 2-col on smallest phones */
+      .stat-strip-inner { grid-template-columns: repeat(2, 1fr) !important; }
+      .stat-val { font-size: 1.55rem; }
+
+      /* CTA — full width buttons, stacked */
+      .cta-inner { padding: 3rem 1.25rem; gap: 2rem; }
+      .cta-buttons { width: 100%; }
+      .btn-primary, .btn-secondary { width: 100%; white-space: normal; text-align: center; }
+
+      /* Character grid single col */
+      .char-grid { grid-template-columns: 1fr !important; }
+
+      /* Journey grid single col */
+      .journey-grid { grid-template-columns: 1fr !important; }
+
+      /* Instagram embeds single col */
+      .ig-embed-grid { grid-template-columns: 1fr !important; }
+
+      /* Video grid 2 col */
+      .vwall-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .vwall-section { padding: 3.5rem 1.25rem; }
+
+      /* Advanced grid — 2 col */
+      .adv-grid-ld { grid-template-columns: repeat(2, 1fr); }
+
+      /* Stat table font */
+      .dash-table { font-size: 0.78rem; }
+      .dash-table th, .dash-table td { padding: 0.6rem 0.65rem; }
+
+      /* Modal full screen on small phones */
+      .vmodal { padding: max(0.5rem, env(safe-area-inset-top)) 0.5rem max(0.5rem, env(safe-area-inset-bottom)); }
+      .vmodal-box { border-radius: 4px; max-height: 88vh; }
+
+      /* Tabs wrap better */
+      .vwall-tabs { gap: 6px; }
+      .vtab { font-size: 0.68rem; padding: 0.5rem 0.7rem; min-height: 40px; }
+
+      /* Hero photo height */
+      .hero-photo-bg { min-height: 220px; }
+
+      /* Footer stacked */
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    }
+
+    /* Smooth scrolling for overflow containers on iOS */
+    .dash-table-wrap,
+    .nav-inner,
+    .vwall-tabs {
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Prevent iOS zoom on double-tap for interactive elements */
+    .vcard, .vtab, .btn-primary, .btn-secondary, .nav-cta {
+      touch-action: manipulation;
+    }
 
   </style>
 </head>
@@ -814,237 +952,110 @@
   </div>
 </div>
 
-<!-- ── SEASON STATS ── -->
-<section class="section alt">
+
+
+
+
+
+<!-- ── NEXT STEP ── -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div>
+      <div class="cta-label">Next Step</div>
+      <h2 class="cta-title">Seeking Practice &amp;<br />Tryout Opportunities</h2>
+      <p class="cta-desc">
+        Kassidy is actively looking for upcoming practices and tryouts where she can get quality reps,
+        compete at a high level, and showcase her abilities in person. She comes ready to work,
+        ready to listen, and ready to help any program win.
+      </p>
+    </div>
+    <div class="cta-buttons">
+      <a href="https://www.instagram.com/kasscargill" target="_blank" class="btn-primary">
+        @kasscargill on Instagram
+      </a>
+      <a href="recruiting_v2.html" class="btn-secondary">
+        Full Recruiting Profile
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CHARACTER PROFILE ── -->
+<section class="section" id="character">
+  <div class="section-inner">
+    <div class="section-label">Who She Is</div>
+    <h2 class="section-title">Character Profile</h2>
+    <div class="char-grid">
+      <div class="story-pullquote">
+        <p>"She's not looking for the spotlight — she's looking for the work. And when the moment comes, she's always ready. That's what makes her different."</p>
+        <cite>— #21 Kassidy Cargill &nbsp;·&nbsp; Hotshots 2K15</cite>
+      </div>
+      <div class="character-traits">
+        <div class="trait-row"><div class="trait-icon"></div><div class="trait-text"><strong>Humble &amp; Coachable.</strong> Responds to feedback immediately. Corrections are visible in real time.</div></div>
+        <div class="trait-row"><div class="trait-icon"></div><div class="trait-text"><strong>Confident in her ability.</strong> Doesn't shrink in pressure situations — she produces in them.</div></div>
+        <div class="trait-row"><div class="trait-icon"></div><div class="trait-text"><strong>Silent leader.</strong> Elevates the players around her through effort, not noise.</div></div>
+        <div class="trait-row"><div class="trait-icon"></div><div class="trait-text"><strong>True utility athlete.</strong> Has played and contributed at every position on the field.</div></div>
+        <div class="trait-row"><div class="trait-icon"></div><div class="trait-text"><strong>Respectful &amp; team-first.</strong> Never the problem in the dugout. Always the solution on the field.</div></div>
+        <div class="trait-row"><div class="trait-icon"></div><div class="trait-text"><strong>Team USA 10U 2026.</strong> The recognition of everything built from the beginning.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STAT DASHBOARD ── -->
+<section class="section alt" id="stats-detail">
   <div class="section-inner">
     <div class="section-label">Performance</div>
-    <h2 class="section-title">Season Breakdown</h2>
+    <h2 class="section-title">Stat Dashboard</h2>
 
-    <div class="table-wrap">
-      <table class="stat-table">
+    <h3 class="dash-sub">Season by Season</h3>
+    <div class="dash-table-wrap">
+      <table class="dash-table">
         <thead>
           <tr>
-            <th>Season</th>
-            <th>Team</th>
-            <th class="num">AVG</th>
-            <th class="num">OBP</th>
-            <th class="num">SLG</th>
-            <th class="num">OPS</th>
-            <th class="num">H</th>
-            <th class="num">HR</th>
-            <th class="num">3B</th>
-            <th class="num">SB</th>
-            <th class="num">SB%</th>
+            <th>Season</th><th>Team</th>
+            <th class="r">AVG</th><th class="r">OBP</th><th class="r">SLG</th><th class="r">OPS</th>
+            <th class="r">H</th><th class="r">HR</th><th class="r">3B</th><th class="r">SB</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="season-name">Spring 2024</td>
-            <td class="team-tag team-bnns">Bananas</td>
-            <td class="num bold">.548</td>
-            <td class="num">.560</td>
-            <td class="num">.699</td>
-            <td class="num hero-num">1.259</td>
-            <td class="num">40</td>
-            <td class="num">2</td>
-            <td class="num">—</td>
-            <td class="num">2</td>
-            <td class="num">—</td>
-          </tr>
-          <tr>
-            <td class="season-name">Fall 2024</td>
-            <td class="team-tag team-bnns">Bananas</td>
-            <td class="num bold">.314</td>
-            <td class="num">.529</td>
-            <td class="num">.400</td>
-            <td class="num">.929</td>
-            <td class="num">11</td>
-            <td class="num">1</td>
-            <td class="num">—</td>
-            <td class="num">27</td>
-            <td class="num">—</td>
-          </tr>
-          <tr>
-            <td class="season-name">Spring 2025</td>
-            <td class="team-tag team-htsh">Hotshots</td>
-            <td class="num bold">.426</td>
-            <td class="num">.492</td>
-            <td class="num">.806</td>
-            <td class="num hero-num">1.297</td>
-            <td class="num">46</td>
-            <td class="num">6</td>
-            <td class="num">—</td>
-            <td class="num">45</td>
-            <td class="num">—</td>
-          </tr>
-          <tr>
-            <td class="season-name">Fall 2025</td>
-            <td class="team-tag team-htsh">Hotshots 2K15</td>
-            <td class="num bold">.495</td>
-            <td class="num">.529</td>
-            <td class="num">.667</td>
-            <td class="num hero-num">1.196</td>
-            <td class="num">46</td>
-            <td class="num">1</td>
-            <td class="num">—</td>
-            <td class="num">26</td>
-            <td class="num">—</td>
-          </tr>
-          <tr>
-            <td class="season-name">Spring 2026</td>
-            <td class="team-tag team-htsh">Hotshots 2K15</td>
-            <td class="num bold">.389</td>
-            <td class="num">.522</td>
-            <td class="num">.667</td>
-            <td class="num hero-num">1.188</td>
-            <td class="num">14</td>
-            <td class="num">2</td>
-            <td class="num">—</td>
-            <td class="num">16</td>
-            <td class="num">94.87%</td>
-          </tr>
+          <tr><td class="s-name">Spring 2024</td><td class="s-team t-bnns">Bananas</td>
+            <td class="r s-bold">.548</td><td class="r">.560</td><td class="r">.699</td><td class="r s-ops">1.259</td>
+            <td class="r">40</td><td class="r">2</td><td class="r">—</td><td class="r">2</td></tr>
+          <tr><td class="s-name">Fall 2024</td><td class="s-team t-bnns">Bananas</td>
+            <td class="r s-bold">.314</td><td class="r">.529</td><td class="r">.400</td><td class="r s-ops">.929</td>
+            <td class="r">11</td><td class="r">1</td><td class="r">—</td><td class="r">27</td></tr>
+          <tr><td class="s-name">Spring 2025</td><td class="s-team t-htsh">Hotshots</td>
+            <td class="r s-bold">.426</td><td class="r">.492</td><td class="r">.806</td><td class="r s-ops">1.297</td>
+            <td class="r">46</td><td class="r">6</td><td class="r">—</td><td class="r">45</td></tr>
+          <tr><td class="s-name">Fall 2025</td><td class="s-team t-htsh">Hotshots 2K15</td>
+            <td class="r s-bold">.495</td><td class="r">.529</td><td class="r">.667</td><td class="r s-ops">1.196</td>
+            <td class="r">46</td><td class="r">1</td><td class="r">—</td><td class="r">26</td></tr>
+          <tr><td class="s-name">Spring 2026</td><td class="s-team t-htsh">Hotshots 2K15</td>
+            <td class="r s-bold">.389</td><td class="r">.522</td><td class="r">.667</td><td class="r s-ops">1.188</td>
+            <td class="r">14</td><td class="r">2</td><td class="r">—</td><td class="r">16</td></tr>
         </tbody>
         <tfoot>
-          <tr>
-            <td colspan="2"><strong>Career Totals</strong></td>
-            <td class="num hero-num">.449</td>
-            <td class="num">.520</td>
-            <td class="num">.704</td>
-            <td class="num hero-num">1.224</td>
-            <td class="num">97</td>
-            <td class="num">9</td>
-            <td class="num">11</td>
-            <td class="num">74</td>
-            <td class="num hero-num">94.87%</td>
-          </tr>
+          <tr><td colspan="2" class="s-total">Career Totals</td>
+            <td class="r s-ops">.449</td><td class="r">.520</td><td class="r">.704</td><td class="r s-ops">1.224</td>
+            <td class="r">97</td><td class="r">9</td><td class="r">11</td><td class="r">74</td></tr>
         </tfoot>
       </table>
     </div>
 
-    <!-- Spring 2026 advanced row -->
-    <div style="margin-top:1.25rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;">
-      <div style="background:var(--white);padding:0.85rem 1rem;text-align:center;">
-        <div style="font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:500;color:var(--navy);">80.56%</div>
-        <div style="font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:3px;">Contact %</div>
-      </div>
-      <div style="background:var(--white);padding:0.85rem 1rem;text-align:center;">
-        <div style="font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:500;color:var(--navy);">1.000</div>
-        <div style="font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:3px;">BB / K</div>
-      </div>
-      <div style="background:var(--white);padding:0.85rem 1rem;text-align:center;">
-        <div style="font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:500;color:var(--navy);">.421</div>
-        <div style="font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:3px;">BA / RISP</div>
-      </div>
-      <div style="background:var(--white);padding:0.85rem 1rem;text-align:center;">
-        <div style="font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:500;color:var(--navy);">.444</div>
-        <div style="font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:3px;">BABIP</div>
-      </div>
-      <div style="background:var(--white);padding:0.85rem 1rem;text-align:center;">
-        <div style="font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:500;color:var(--navy);">18–6</div>
-        <div style="font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:3px;">Team Record</div>
-      </div>
-      <div style="background:var(--white);padding:0.85rem 1rem;text-align:center;">
-        <div style="font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:500;color:var(--red);">5</div>
-        <div style="font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:3px;">Hard Hit Balls</div>
-      </div>
-      <div style="background:var(--white);padding:0.85rem 1rem;text-align:center;grid-column:span 2;">
-        <div style="font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Spring 2026 Advanced Snapshot</div>
-      </div>
+    <h3 class="dash-sub" style="margin-top:1.75rem;">Spring 2026 Advanced Snapshot</h3>
+    <div class="adv-grid-ld">
+      <div class="adv-cell-ld"><div class="adv-lbl">Contact %</div><div class="adv-num">80.56</div></div>
+      <div class="adv-cell-ld"><div class="adv-lbl">BB / K</div><div class="adv-num">1.000</div></div>
+      <div class="adv-cell-ld"><div class="adv-lbl">BABIP</div><div class="adv-num">.444</div></div>
+      <div class="adv-cell-ld"><div class="adv-lbl">BA / RISP</div><div class="adv-num red">.421</div></div>
+      <div class="adv-cell-ld"><div class="adv-lbl">GB %</div><div class="adv-num">58.62</div></div>
+      <div class="adv-cell-ld"><div class="adv-lbl">Hard Hit</div><div class="adv-num">5</div></div>
+      <div class="adv-cell-ld"><div class="adv-lbl">Team Record</div><div class="adv-num">18–6</div></div>
+      <div class="adv-cell-ld"><div class="adv-lbl">SB Success</div><div class="adv-num red">94.87%</div></div>
     </div>
   </div>
 </section>
-
-<!-- ── STORY ── -->
-<section class="section" id="story">
-  <div class="section-inner">
-    <div class="section-label">Her Journey</div>
-    <h2 class="section-title">Built Through Every Chapter</h2>
-
-    <div class="story-grid">
-
-      <!-- Left: chapters -->
-      <div>
-        <div class="story-chapter">
-          <div class="story-chapter-era">
-            <div class="era-dot red"></div>
-            <span class="story-chapter-label">2023 · The Beginning</span>
-          </div>
-          <h3>Adversity First. Championship Next.</h3>
-          <p>
-            Kassidy's first competitive season wasn't easy. She entered girls softball with a coach who sidelined her and six other players in favor of coaches' kids. She made plays from left field when the league president was watching and earned the only nickname that mattered — <em>Clutch Cargill</em>. After resigning from that team, she was invited mid-season onto Romo's Arsenal boys baseball squad by the league president himself. She started at pitcher in her first game, made the first two outs, hit every at-bat, and ran the bases like she'd been doing it her whole life. Arsenal swept everything: opening tournament, regular season #1, end-of-season tournament. Triple champions in her first year.
-          </p>
-        </div>
-
-        <div class="story-chapter">
-          <div class="story-chapter-era">
-            <div class="era-dot gold"></div>
-            <span class="story-chapter-label">2024 · Two Leagues, One Vision</span>
-          </div>
-          <h3>The Bananas Didn't Give Up Asking.</h3>
-          <p>
-            After the Arsenal championship season, Coach Brian of the Bananas reached out — and on that same day, so did Coach Romo with a D1 kid-pitch baseball invite. The family chose one more season with Arsenal for loyalty. When Romo's invitation came again the following season — this time for a D1 10U boys baseball team — Kassidy accepted. Coach Brian called a second time. This time she said yes to the Bananas too. She honored every commitment to the baseball team while transitioning over, and in Spring 2024 posted <strong>.548 AVG and 1.259 OPS</strong>. She hadn't adjusted. She'd arrived.
-          </p>
-        </div>
-
-        <div class="story-chapter">
-          <div class="story-chapter-era">
-            <div class="era-dot navy"></div>
-            <span class="story-chapter-label">2025–2026 · Hotshots Era</span>
-          </div>
-          <h3>Silent Leader. Maximum Effort. Every Time.</h3>
-          <p>
-            Three seasons with Hotshots. No drama, no shortcuts. Spring 2025 was her offensive peak — <strong>.426 AVG, .806 SLG, 6 home runs, 45 stolen bases</strong>. Kassidy settled primarily into 3B, SS, C, and CF, bringing catcher IQ and infield instincts to every spot. She's the kind of player who leads by showing up, working harder than everyone else, and making the person next to her raise their level. Coaches don't have to chase her energy — she brings it.
-          </p>
-        </div>
-      </div>
-
-      <!-- Right: pullquote + traits -->
-      <div>
-        <div class="story-pullquote">
-          <p>"She's not looking for the spotlight — she's looking for the work. And when the moment comes, she's always ready. That's what makes her different."</p>
-          <cite>— #21 Kassidy Cargill, Hotshots 2K15</cite>
-        </div>
-
-        <div class="character-traits">
-          <h3>Character Profile</h3>
-
-          <div class="trait-row">
-            <div class="trait-icon"></div>
-            <div class="trait-text"><strong>Humble &amp; Coachable.</strong> Responds to feedback immediately. Corrections are visible in real time.</div>
-          </div>
-          <div class="trait-row">
-            <div class="trait-icon"></div>
-            <div class="trait-text"><strong>Confident in her ability.</strong> Doesn't shrink in pressure situations — she produces in them.</div>
-          </div>
-          <div class="trait-row">
-            <div class="trait-icon"></div>
-            <div class="trait-text"><strong>Silent leader.</strong> Elevates the players around her through effort, not noise.</div>
-          </div>
-          <div class="trait-row">
-            <div class="trait-icon"></div>
-            <div class="trait-text"><strong>True utility athlete.</strong> Has played and contributed at every position on the field.</div>
-          </div>
-          <div class="trait-row">
-            <div class="trait-icon"></div>
-            <div class="trait-text"><strong>Respectful &amp; team-first.</strong> Never the problem in the dugout. Always the solution on the field.</div>
-          </div>
-          <div class="trait-row">
-            <div class="trait-icon"></div>
-            <div class="trait-text"><strong>Team USA 10U 2026.</strong> The recognition of everything built from the beginning.</div>
-          </div>
-        </div>
-
-        <!-- Small photo trio -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:1rem;border-radius:4px;overflow:hidden;">
-          <img src="usa-night-ghost-bat.jpeg" alt="Kassidy Cargill night game Ghost bat" style="width:100%;height:160px;object-fit:cover;object-position:top;" />
-          <img src="usa-action-celebration.png" alt="Kassidy Cargill USA celebration" style="width:100%;height:160px;object-fit:cover;object-position:top;" />
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 
 <!-- == VIDEO WALL == -->
 <section class="vwall-section" id="film">
@@ -1232,28 +1243,39 @@
       <button class="vmodal-close" onclick="closeModal()">&#10005;</button>
     </div>
     <div class="vmodal-player">
-      <iframe id="vmodal-iframe" src="" allow="autoplay" allowfullscreen frameborder="0" style="width:100%;height:100%;border:0;"></iframe>
+      <iframe id="vmodal-iframe" src="" allow="autoplay; fullscreen" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
     </div>
   </div>
 </div>
 
-<!-- ── CTA ── -->
-<section class="cta-section" id="contact">
-  <div class="cta-inner">
-    <div>
-      <div class="cta-label">Next Step</div>
-      <h2 class="cta-title">Seeking Practice &amp;<br />Tryout Opportunities</h2>
-      <p class="cta-desc">
-        Kassidy is actively looking for upcoming practices and tryouts where she can get quality reps, compete at a high level, and showcase her abilities in person. She comes ready to work, ready to listen, and ready to help any program win.
-      </p>
+
+
+<!-- ── HER JOURNEY ── -->
+<section class="section alt" id="story">
+  <div class="section-inner">
+    <div class="section-label">Her Journey</div>
+    <h2 class="section-title">Built Through Every Chapter</h2>
+    <div class="journey-grid">
+      <div class="story-chapter">
+        <div class="story-chapter-era"><div class="era-dot red"></div><span class="story-chapter-label">2023 · The Beginning</span></div>
+        <h3>Adversity First. Championship Next.</h3>
+        <p>Kassidy's first competitive season wasn't easy. She entered girls softball with a coach who sidelined her and six other players in favor of coaches' kids. She made plays from left field when the league president was watching and earned the only nickname that mattered — <em>Clutch Cargill</em>. After resigning from that team, she was invited mid-season onto Romo's Arsenal boys baseball squad by the league president himself. She started at pitcher in her first game, made the first two outs, hit every at-bat, and ran the bases like she'd been doing it her whole life. Arsenal swept everything: opening tournament, regular season #1, end-of-season tournament. Triple champions in her first year.</p>
+      </div>
+      <div class="story-chapter">
+        <div class="story-chapter-era"><div class="era-dot gold"></div><span class="story-chapter-label">2024 · Two Leagues, One Vision</span></div>
+        <h3>The Bananas Didn't Give Up Asking.</h3>
+        <p>After the Arsenal championship season, Coach Brian of the Bananas reached out — and on that same day, so did Coach Romo with a D1 kid-pitch baseball invite. The family chose one more season with Arsenal for loyalty. When Coach Brian called a second time — this time while she was mid-commitment with a D1 10U boys baseball team — she said yes to both. She honored every commitment to the baseball team while transitioning over, and in Spring 2024 posted <strong>.548 AVG and 1.259 OPS</strong>. She hadn't adjusted. She'd arrived.</p>
+      </div>
+      <div class="story-chapter">
+        <div class="story-chapter-era"><div class="era-dot navy"></div><span class="story-chapter-label">2025–2026 · Hotshots Era</span></div>
+        <h3>Silent Leader. Maximum Effort. Every Time.</h3>
+        <p>Three seasons with Hotshots. No drama, no shortcuts. Spring 2025 was her offensive peak — <strong>.426 AVG, .806 SLG, 6 home runs, 45 stolen bases</strong>. Kassidy settled primarily into 3B, SS, C, and CF, bringing catcher IQ and infield instincts to every spot. She's the kind of player who leads by showing up, working harder than everyone else, and making the person next to her raise their level. Coaches don't have to chase her energy — she brings it.</p>
+      </div>
     </div>
-    <div class="cta-buttons">
-      <a href="https://www.instagram.com/kasscargill" target="_blank" class="btn-primary">
-        @kasscargill on Instagram
-      </a>
-      <a href="recruiting_v2.html" class="btn-secondary">
-        Full Recruiting Profile
-      </a>
+    <!-- small photo duo -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:2rem;border-radius:4px;overflow:hidden;max-width:600px;">
+      <img src="usa-night-ghost-bat.jpeg" alt="Kassidy Cargill night game Ghost bat" style="width:100%;height:200px;object-fit:cover;object-position:top;" />
+      <img src="usa-action-celebration.png" alt="Kassidy Cargill USA celebration" style="width:100%;height:200px;object-fit:cover;object-position:top;" />
     </div>
   </div>
 </section>
