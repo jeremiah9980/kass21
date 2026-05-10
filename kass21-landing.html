@@ -655,6 +655,48 @@
       border-top: 1px solid var(--border);
       margin: 2.5rem 0;
     }
+
+    /* == VIDEO WALL == */
+    .vwall-section { background:#080f22; padding:5rem 1.5rem; border-top:3px solid #c8001e; }
+    .vwall-inner { max-width:1200px; margin:0 auto; }
+    .vwall-header { display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem; margin-bottom:2.5rem; flex-wrap:wrap; }
+    .vwall-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,5vw,3rem); color:#fff; letter-spacing:0.04em; line-height:1; margin-bottom:0.6rem; }
+    .vwall-desc { font-size:0.88rem; color:rgba(255,255,255,0.45); max-width:500px; line-height:1.6; }
+    .vwall-folder-link { display:inline-block; font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.4); border:1px solid rgba(255,255,255,0.15); padding:0.6rem 1.1rem; border-radius:3px; white-space:nowrap; transition:color 0.15s,border-color 0.15s; flex-shrink:0; margin-top:0.25rem; }
+    .vwall-folder-link:hover { color:#fff; border-color:rgba(255,255,255,0.4); }
+    .vwall-tabs { display:flex; gap:4px; margin-bottom:1.75rem; flex-wrap:wrap; }
+    .vtab { font-family:'DM Sans',sans-serif; font-size:0.75rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:0.5rem 1rem; border:1px solid rgba(255,255,255,0.1); border-radius:3px; background:transparent; color:rgba(255,255,255,0.4); cursor:pointer; transition:all 0.15s; }
+    .vtab:hover { color:rgba(255,255,255,0.8); border-color:rgba(255,255,255,0.25); }
+    .vtab.active { background:#fff; color:#080f22; border-color:#fff; }
+    .vwall-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+    @media(max-width:1000px){ .vwall-grid{grid-template-columns:repeat(3,1fr);} }
+    @media(max-width:680px){ .vwall-grid{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:420px){ .vwall-grid{grid-template-columns:1fr;} }
+    .vcard { background:#0d1a35; border:1px solid rgba(255,255,255,0.07); border-radius:4px; overflow:hidden; cursor:pointer; transition:border-color 0.15s,transform 0.15s; }
+    .vcard:hover { border-color:rgba(255,255,255,0.25); transform:translateY(-2px); }
+    .vcard.hidden { display:none; }
+    .vcard-thumb { background:#0a1428; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; position:relative; }
+    .vcard-thumb::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(200,0,30,0.06) 0%,transparent 60%); }
+    .vplay { width:36px; height:36px; background:rgba(200,0,30,0.85); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.7rem; color:#fff; padding-left:3px; transition:background 0.15s,transform 0.15s; }
+    .vcard:hover .vplay { background:#c8001e; transform:scale(1.1); }
+    .vcard-body { padding:0.7rem 0.8rem; }
+    .vbadge { display:inline-block; font-size:0.6rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:2px 7px; border-radius:2px; margin-bottom:0.35rem; }
+    .vbadge.hr { background:rgba(200,0,30,0.2); color:#ff6680; border:1px solid rgba(200,0,30,0.35); }
+    .vbadge.triple { background:rgba(26,58,122,0.35); color:#7096e8; border:1px solid rgba(26,58,122,0.5); }
+    .vbadge.double { background:rgba(180,120,0,0.2); color:#d4a040; border:1px solid rgba(180,120,0,0.35); }
+    .vcard-date { font-size:0.8rem; font-weight:600; color:#fff; line-height:1.2; }
+    .vcard-context { font-size:0.68rem; color:rgba(255,255,255,0.35); margin-top:2px; }
+    .vmodal { display:none; position:fixed; inset:0; background:rgba(8,15,34,0.92); z-index:500; align-items:center; justify-content:center; padding:1rem; }
+    .vmodal.open { display:flex; }
+    .vmodal-box { background:#0d1a35; border:1px solid rgba(255,255,255,0.12); border-radius:6px; overflow:hidden; width:100%; max-width:860px; }
+    .vmodal-header { display:flex; align-items:center; justify-content:space-between; padding:1rem 1.25rem; border-bottom:1px solid rgba(255,255,255,0.08); gap:1rem; }
+    .vmodal-badge { font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:2px; }
+    .vmodal-title { font-family:'Bebas Neue',sans-serif; font-size:1.3rem; color:#fff; letter-spacing:0.06em; line-height:1; }
+    .vmodal-sub { font-size:0.72rem; color:rgba(255,255,255,0.4); margin-top:2px; }
+    .vmodal-close { background:rgba(255,255,255,0.08); border:none; color:rgba(255,255,255,0.6); width:32px; height:32px; border-radius:50%; cursor:pointer; font-size:0.75rem; transition:background 0.15s,color 0.15s; flex-shrink:0; }
+    .vmodal-close:hover { background:rgba(255,255,255,0.16); color:#fff; }
+    .vmodal-player { aspect-ratio:16/9; background:#000; }
+
   </style>
 </head>
 <body>
@@ -666,6 +708,7 @@
     <ul class="nav-links">
       <li><a href="#stats">Stats</a></li>
       <li><a href="#story">Story</a></li>
+      <li><a href="#film">Film Room</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Find Tryouts</a>
@@ -690,7 +733,7 @@
       <div>
         <div class="hero-org">
           <div class="hero-org-dot"></div>
-          <span class="hero-org-text">Hotshots Softball &nbsp;·&nbsp; 2K15 &nbsp;·&nbsp; Georgetown, TX</span>
+          <span class="hero-org-text">2K15 &nbsp;·&nbsp; Georgetown, TX</span>
         </div>
 
         <h1 class="hero-name">
@@ -1002,6 +1045,198 @@
   </div>
 </section>
 
+
+<!-- == VIDEO WALL == -->
+<section class="vwall-section" id="film">
+  <div class="vwall-inner">
+    <div class="vwall-header">
+      <div>
+        <div class="section-label" style="color:rgba(255,255,255,0.5);">Film Room</div>
+        <h2 class="vwall-title">At the Plate</h2>
+        <p class="vwall-desc">19 documented at-bats — 6 home runs, 7 triples, 6 doubles — straight from game film. No narration. Judge for yourself.</p>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1IHkRyyhP4pcVnR3BW5AaooALhAVpb3YP?usp=drive_link" target="_blank" class="vwall-folder-link">Full Folder &#8599;</a>
+    </div>
+    <div class="vwall-tabs">
+      <button class="vtab active" onclick="filterVideos('all',this)">All <span class="vtab-count">19</span></button>
+      <button class="vtab" onclick="filterVideos('HR',this)">&#127968; Home Runs <span class="vtab-count">6</span></button>
+      <button class="vtab" onclick="filterVideos('3B',this)">3B Triples <span class="vtab-count">7</span></button>
+      <button class="vtab" onclick="filterVideos('2B',this)">2B Doubles <span class="vtab-count">6</span></button>
+    </div>
+    <div class="vwall-grid" id="vwall-grid">
+      <div class="vcard" data-type="HR" onclick="openModal('1w0LSyFLWVroamct7MjHSUx82cyx_3Ppv','Home Run','Mar 21, 2026','Inn 4 · Top')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge hr">Home Run</span>
+          <div class="vcard-date">Mar 21, 2026</div>
+          <div class="vcard-context">Inn 4 · Top</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="HR" onclick="openModal('1rr05FoSDuwphhqKfUt-H_HrhHMcCZ1GI','Home Run','Oct 25, 2025','Inn 2 · Bottom')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge hr">Home Run</span>
+          <div class="vcard-date">Oct 25, 2025</div>
+          <div class="vcard-context">Inn 2 · Bottom</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="HR" onclick="openModal('1v5_b27StswcGGtFzg21X38CEpk-qxTc_','Home Run','May 24, 2025','Inn 1 · Top')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge hr">Home Run</span>
+          <div class="vcard-date">May 24, 2025</div>
+          <div class="vcard-context">Inn 1 · Top</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="HR" onclick="openModal('19xpmoSzF09-PpxIe4TWEMGkQ5C6Fm2yz','Home Run','May 17, 2025','Inn 1 · Bottom')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge hr">Home Run</span>
+          <div class="vcard-date">May 17, 2025</div>
+          <div class="vcard-context">Inn 1 · Bottom</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="HR" onclick="openModal('1G_cloqQ5BnW-1u8eyYOWRMlIWi2yu2nE','Home Run','Apr 26, 2025','Inn 1 · Top')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge hr">Home Run</span>
+          <div class="vcard-date">Apr 26, 2025</div>
+          <div class="vcard-context">Inn 1 · Top</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="HR" onclick="openModal('1GF_C65fV0LQ_pAKU9Xd3bL2Bpw1ZZdz1','Home Run','Apr 13, 2025','Inn 2 · Bottom')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge hr">Home Run</span>
+          <div class="vcard-date">Apr 13, 2025</div>
+          <div class="vcard-context">Inn 2 · Bottom</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="3B" onclick="openModal('1D2bEo1aT7qiLaf9dQYcelhmbYMIpCG9g','Triple','Mar 21, 2026','Inn 1 · Top')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge triple">Triple</span>
+          <div class="vcard-date">Mar 21, 2026</div>
+          <div class="vcard-context">Inn 1 · Top</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="3B" onclick="openModal('1UuW_nFOMcJfwlWYfHGQMDhKI1IGhfFUN','Triple','Mar 14, 2026','Inn 1 · Bottom')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge triple">Triple</span>
+          <div class="vcard-date">Mar 14, 2026</div>
+          <div class="vcard-context">Inn 1 · Bottom</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="3B" onclick="openModal('1qVy-q_QkOu-n75QHtPqvhkmen5qGhlvq','Triple','Feb 21, 2026','Inn 1 · Bottom')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge triple">Triple</span>
+          <div class="vcard-date">Feb 21, 2026</div>
+          <div class="vcard-context">Inn 1 · Bottom</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="3B" onclick="openModal('1xwcKLbscoadAPFMYmpa90B5E3r6xwmgl','Triple','Nov 17, 2025','Inn 1 · Top')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge triple">Triple</span>
+          <div class="vcard-date">Nov 17, 2025</div>
+          <div class="vcard-context">Inn 1 · Top</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="3B" onclick="openModal('1KwAvZq79vnbAi_HFlhkTcFEehdjDB2RQ','Triple','Nov 16, 2025','Inn 2 · Top')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge triple">Triple</span>
+          <div class="vcard-date">Nov 16, 2025</div>
+          <div class="vcard-context">Inn 2 · Top</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="3B" onclick="openModal('1TkLAPO_Gdo3-6baZNAn1bE6ZS485iMEO','Triple','Apr 13, 2025','Inn 2 · Top')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge triple">Triple</span>
+          <div class="vcard-date">Apr 13, 2025</div>
+          <div class="vcard-context">Inn 2 · Top</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="3B" onclick="openModal('11oFfruVjUFasRy9hPXkFAb7tm758T0tq','Triple','Feb 23, 2025','Inn 1 · Top')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge triple">Triple</span>
+          <div class="vcard-date">Feb 23, 2025</div>
+          <div class="vcard-context">Inn 1 · Top</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="2B" onclick="openModal('1NmCvCuxFYk9eWU8Sn47hWnx7XuuNUHJL','Double','Apr 18, 2026','Inn 1 · Bottom')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge double">Double</span>
+          <div class="vcard-date">Apr 18, 2026</div>
+          <div class="vcard-context">Inn 1 · Bottom</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="2B" onclick="openModal('1K1OqftqwBfKzgA0xtTu0qV0ZPGkUuoep','Double','Dec 13, 2025','Inn 1 · Top')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge double">Double</span>
+          <div class="vcard-date">Dec 13, 2025</div>
+          <div class="vcard-context">Inn 1 · Top</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="2B" onclick="openModal('1PxvUwypdPuUGQcDoXy-vLjE-sJZyENpr','Double','Nov 15, 2025','Inn 2 · Bottom')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge double">Double</span>
+          <div class="vcard-date">Nov 15, 2025</div>
+          <div class="vcard-context">Inn 2 · Bottom</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="2B" onclick="openModal('1F8g_6PjtObSet4ATzoo62NNka0trIWiV','Double','Oct 18, 2025','Inn 1 · Top')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge double">Double</span>
+          <div class="vcard-date">Oct 18, 2025</div>
+          <div class="vcard-context">Inn 1 · Top</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="2B" onclick="openModal('1781QrwW8ZoBTqnVyu6o7lO5mLhLHC3BT','Double','Jun 14, 2025','Inn 3 · Bottom')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge double">Double</span>
+          <div class="vcard-date">Jun 14, 2025</div>
+          <div class="vcard-context">Inn 3 · Bottom</div>
+        </div>
+      </div>
+      <div class="vcard" data-type="2B" onclick="openModal('1hvCHxhvn5OFcXDXoqho3Wzl_mSpty1cB','Double','Feb 23, 2025','Inn 1 · Top')">
+        <div class="vcard-thumb"><div class="vplay">&#9654;</div></div>
+        <div class="vcard-body">
+          <span class="vbadge double">Double</span>
+          <div class="vcard-date">Feb 23, 2025</div>
+          <div class="vcard-context">Inn 1 · Top</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- == MODAL == -->
+<div class="vmodal" id="vmodal" onclick="closeModalBg(event)">
+  <div class="vmodal-box">
+    <div class="vmodal-header">
+      <div>
+        <div class="vmodal-badge" id="vmodal-badge"></div>
+        <div class="vmodal-title" id="vmodal-title"></div>
+        <div class="vmodal-sub" id="vmodal-sub"></div>
+      </div>
+      <button class="vmodal-close" onclick="closeModal()">&#10005;</button>
+    </div>
+    <div class="vmodal-player">
+      <iframe id="vmodal-iframe" src="" allow="autoplay" allowfullscreen frameborder="0" style="width:100%;height:100%;border:0;"></iframe>
+    </div>
+  </div>
+</div>
+
 <!-- ── CTA ── -->
 <section class="cta-section" id="contact">
   <div class="cta-inner">
@@ -1035,6 +1270,32 @@
     </div>
   </div>
 </footer>
+
+
+<script>
+function openModal(id,type,date,ctx){
+  document.getElementById('vmodal-iframe').src='https://drive.google.com/file/d/'+id+'/preview';
+  document.getElementById('vmodal-badge').textContent=type;
+  document.getElementById('vmodal-title').textContent=date;
+  document.getElementById('vmodal-sub').textContent=ctx+' · #21 Kassidy Cargill';
+  document.getElementById('vmodal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('vmodal').classList.remove('open');
+  document.getElementById('vmodal-iframe').src='';
+  document.body.style.overflow='';
+}
+function closeModalBg(e){if(e.target===document.getElementById('vmodal'))closeModal();}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+function filterVideos(type,btn){
+  document.querySelectorAll('.vtab').forEach(function(t){t.classList.remove('active');});
+  btn.classList.add('active');
+  document.querySelectorAll('.vcard').forEach(function(card){
+    card.classList.toggle('hidden', type!=='all' && card.dataset.type!==type);
+  });
+}
+</script>
 
 </body>
 </html>
